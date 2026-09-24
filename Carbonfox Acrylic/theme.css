@@ -806,9 +806,11 @@ body.theme-dark .mb-button.sepia-glow > button:hover {
   --interactive-accent: var(--cf-blue) !important;
   --text-selection: rgba(120, 169, 255, 0.2) !important;
   
-  /* Main note area background 80% opacity */
+  /* Main note area and sidebars 80% opacity */
   --background-primary: rgba(22, 22, 22, 0.8) !important;
   --background-primary-alt: rgba(22, 22, 22, 0.8) !important;
+  --background-secondary: rgba(22, 22, 22, 0.8) !important;
+  --background-secondary-alt: rgba(22, 22, 22, 0.8) !important;
 }
 
 /* Italics (Pink) */
