@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 
 /*
@@ -8,9 +8,9 @@ description: A Blur Theme for Obsidian with custom wallpaper support.
 version: 1.0.1
 repository: https://github.com/Jawuj/Blur-Theme
 */
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
     THEME SETTINGS (Style Settings plugin)
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 /* @settings
 name: Theme Settings
 id: theme-settings
@@ -69,9 +69,9 @@ settings:
       - label: Brown G
         value: brown-glow-general
 */
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    BACKGROUND IMAGE
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 body {
   --custom-wallpaper: none;
   background-color: #000;
@@ -80,11 +80,11 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    MAIN EDITOR AREA (Transparent cards)
-   PERF: 20px -> 12px. Sigue leyéndose "vidrio esmerilado" pero el costo de
+   PERF: 20px -> 12px. Sigue leyГ©ndose "vidrio esmerilado" pero el costo de
    sampleo baja fuerte porque escala ~al cuadrado del radio.
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .workspace-leaf-content,
 .markdown-preview-view,
 .cm-s-obsidian {
@@ -95,9 +95,9 @@ body {
   padding: 10px;
   contain: layout style paint;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    THEME VARIABLES
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .theme-dark,
 .theme-light {
   --background-primary: transparent;
@@ -118,20 +118,20 @@ body {
   --divider-color: transparent;
 
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    SIDEBAR TRANSPARENCY
-   PERF: sin blur propio — ya está sobre el fondo con blur del panel.
-   ──────────────────────────────────────────────── */
+   PERF: sin blur propio вЂ” ya estГЎ sobre el fondo con blur del panel.
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .workspace-split.mod-left-split,
 .workspace-split.mod-right-split {
   background: transparent;
   padding: 8px;
   border-radius: 12px;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    MODALS & MENUS (Blur + Transparency)
    PERF: 50px -> 26px.
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .popover,
 .popover.menu-container,
 .mod-context-menu,
@@ -166,9 +166,9 @@ select.dropdown option {
   color: #000000 !important;
   background-color: #ffffff;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    PROMPT STYLING (Ctrl+P, Ctrl+O, etc.)
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 body {
   --prompt-input-height: 2.4em;
   --prompt-width: 100%;
@@ -198,9 +198,9 @@ input.prompt-input {
   border: none;
   border-radius: 10px;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    EDITOR LABEL
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .markdown-source-view.mod-cm6::before {
   content: "Writing";
   position: absolute;
@@ -209,9 +209,9 @@ input.prompt-input {
   font-size: 0.8em;
   color: #73737388;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    TEXT SELECTION
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 body ::selection {
   background-color: rgba(180, 180, 180, 0.35);
   color: #fff;
@@ -220,9 +220,9 @@ body ::selection {
 .cm-editor.cm-focused .cm-selectionBackground {
   background-color: rgba(180, 180, 180, 0.35) !important;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    ANIMATIONS
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .modal.mod-settings,
 .modal.mod-command-palette {
   opacity: 0;
@@ -234,15 +234,15 @@ body ::selection {
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 /* PERF: ya no anima text-shadow (repinta cada frame en hilo principal).
-   Se fija UNA sombra multicolor estática y se anima filter: hue-rotate(),
+   Se fija UNA sombra multicolor estГЎtica y se anima filter: hue-rotate(),
    que corre en el compositor/GPU casi gratis. */
 @keyframes rainbowGlow {
   0%   { filter: hue-rotate(0deg); }
   100% { filter: hue-rotate(360deg); }
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    WIDE PAGE MODE
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .wide-page {
   --file-line-width: 100%;
 }
@@ -255,14 +255,14 @@ body ::selection {
   padding: 10px;
   margin: 0 auto;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    UI CLEANUP
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .workspace-tab-header { border: none; }
 .no-inline .inline-title { display: none; }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    CUSTOM INPUTS (Preview + Editor)
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .markdown-preview-view input[type="text"],
 .markdown-preview-view input[type="number"],
 .markdown-preview-view textarea,
@@ -304,9 +304,9 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    EMBEDS (Transparent + Clean)
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .markdown-embed,
 .markdown-embed-content {
   background: transparent;
@@ -323,9 +323,9 @@ input[type="number"] {
   padding: 0;
   margin: 0;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    TAGS (Preview + Editor)
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .tag,
 .cm-tag {
   background-color: rgba(77, 77, 77, 0.43);
@@ -334,9 +334,9 @@ input[type="number"] {
   border-radius: 3px;
   padding: 0 3px;
 }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
    HOVER EFFECTS
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .search-result-file-title:hover,
 .search-result-file-match:hover,
 .search-result-hover:hover,
@@ -345,7 +345,7 @@ input[type="number"] {
   color: var(--text-normal);
 }
 /* ==============================================================================
-   ✦ General Notes Glow Presets ✦
+   вњ¦ General Notes Glow Presets вњ¦
    ============================================================================== */
 body[class*="-glow-general"] .markdown-preview-view :is(strong, em, a, mark),
 body[class*="-glow-general"] .markdown-source-view.mod-cm6 :is(.cm-strong, .cm-em, .cm-highlight, .cm-link, .cm-hmd-internal-link),
@@ -382,9 +382,9 @@ body.aqua-glow-general   { --glow-shadow: 0 0 2px #00ffc3, 0 0 6px #33ffd6, 0 0 
 body.red-glow-general    { --glow-shadow: 0 0 2px #ff4d4d, 0 0 6px #ff6666, 0 0 10px #ff9999; }
 body.orange-glow-general { --glow-shadow: 0 0 2px #ffaa33, 0 0 6px #ff9933, 0 0 10px #ffcc66; }
 body.brown-glow-general  { --glow-shadow: 0 0 2px #8b4513, 0 0 6px #a0522d, 0 0 10px #cd853f; }
-/* ────────────────────────────────────────────────
+/* в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
     CODE BLOCKS
-   ──────────────────────────────────────────────── */
+   в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ */
 .markdown-source-view.mod-cm6 .cm-line span.cm-formatting.cm-formatting-code-block,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
   background-color: rgba(0, 0, 0, 0.095);
@@ -395,7 +395,7 @@ body.brown-glow-general  { --glow-shadow: 0 0 2px #8b4513, 0 0 6px #a0522d, 0 0 
   outline: none !important;
 }
 /* ==============================================================================
-   ✦ Embed cards ✦
+   вњ¦ Embed cards вњ¦
    ============================================================================== */
 .embed {
   position: relative;
@@ -434,7 +434,7 @@ body.aqua-glow-general   .embed { --embed-border: rgba(0, 255, 255, 0.4);   --em
 body.red-glow-general    .embed { --embed-border: rgba(255, 90, 90, 0.4);   --embed-shadow: rgba(255, 90, 90, 0.25); }
 body.orange-glow-general .embed { --embed-border: rgba(255, 165, 0, 0.4);   --embed-shadow: rgba(255, 165, 0, 0.25); }
 body.brown-glow-general  .embed { --embed-border: rgba(139, 69, 19, 0.4);   --embed-shadow: rgba(139, 69, 19, 0.25); }
-/* PERF: 5 capas de box-shadow -> 3, radios más chicos. */
+/* PERF: 5 capas de box-shadow -> 3, radios mГЎs chicos. */
 body.rainbow-glow-general .embed {
   border: 1px solid transparent;
   box-shadow: 0 0 14px rgba(255, 140, 207, 0.22),
@@ -442,7 +442,7 @@ body.rainbow-glow-general .embed {
               0 0 30px rgba(113, 186, 255, 0.22);
 }
 /* ==============================================================================
-   ✦ Toggle Glow OFF ✦
+   вњ¦ Toggle Glow OFF вњ¦
    ============================================================================== */
 body:not(.toggle-glow) {
   --glow-shadow: none;
@@ -482,8 +482,8 @@ body:not(.toggle-darken-notes) .wide-page .cm-s-obsidian {
 }
 
 /* ==============================================================================
-   ✦ Table ✦
-   PERF: sin backdrop-filter propio (8px) — ya está sobre el panel a 12px.
+   вњ¦ Table вњ¦
+   PERF: sin backdrop-filter propio (8px) вЂ” ya estГЎ sobre el panel a 12px.
    ============================================================================== */
 .markdown-preview-view table,
 .cm-preview table,
@@ -546,7 +546,7 @@ body:not(.toggle-darken-notes) .wide-page .cm-s-obsidian {
   background-color: inherit !important;
 }
 /* ==============================================================================
-   ✦ Checkboxes ✦
+   вњ¦ Checkboxes вњ¦
    ============================================================================== */
 .markdown-preview-view input[type="checkbox"],
 .cm-s-obsidian input[type="checkbox"],
@@ -593,7 +593,7 @@ input.task-list-item-checkbox:checked::after {
 }
 
 /* ==============================================================================
-   ✦ Dropdown selects (Style Settings class-select, etc.) ✦
+   вњ¦ Dropdown selects (Style Settings class-select, etc.) вњ¦
    ============================================================================== */
 select,
 .modal select,
@@ -638,7 +638,7 @@ select option:focus {
   color: #fff !important;
 }
 /* ==============================================================================
-   ✦ Style Settings text inputs (e.g. wallpaper URL field) ✦
+   вњ¦ Style Settings text inputs (e.g. wallpaper URL field) вњ¦
    ============================================================================== */
 .setting-item-control input[type="text"],
 .setting-item-control input[type="search"],
@@ -657,7 +657,7 @@ select option:focus {
   background: rgba(255, 255, 255, 0.06);
 }
 /* ==============================================================================
-   ✦ Generic buttons (Settings panel: "Browse", "Check for updates", etc.) ✦
+   вњ¦ Generic buttons (Settings panel: "Browse", "Check for updates", etc.) вњ¦
    ============================================================================== */
 button:not(.clickable-icon),
 .setting-item-control button,
@@ -695,7 +695,7 @@ button.mod-cta:hover,
   border-radius: 6px;
 }
 /* ==============================================================================
-   ✦ Search boxes (e.g. "Search settings...") ✦
+   вњ¦ Search boxes (e.g. "Search settings...") вњ¦
    ============================================================================== */
 .search-input-container input,
 input[type="search"],
@@ -714,7 +714,7 @@ input[type="search"]:focus {
 }
 
 /* ==============================================================================
-   ✦ Home tab plugin Fix ✦
+   вњ¦ Home tab plugin Fix вњ¦
    ============================================================================== */
 .home-tab-searchbar {
   background-color: rgba(66, 66, 66, 0.212) !important;
@@ -752,7 +752,7 @@ input[type="search"]:focus {
   border-radius: 6px;
 }
 /* ==============================================================================
-   ✦ Buttons (Input) ✦
+   вњ¦ Buttons (Input) вњ¦
    ============================================================================== */
 body.theme-dark .mb-button.sepia-glow > button {
   background: rgba(255, 255, 255, 0.04) !important;
@@ -839,18 +839,28 @@ body .markdown-source-view.mod-cm6 .cm-em {
 .markdown-source-view.mod-cm6 .cm-header-6 {
   color: var(--cf-pink) !important;
 }
-/* Fix for the glassy 'void' around the text editor */
-.workspace-split.mod-root .workspace-tabs,
-.workspace-split.mod-root .workspace-leaf-content,
-.workspace-split.mod-root .workspace-tab-header-container {
+/* Global Unified Glass Effect (80% opacity across the ENTIRE app) */
+body {
   background-color: rgba(22, 22, 22, 0.8) !important;
+  background-image: none !important;
 }
-.workspace-split.mod-root .view-content,
-.workspace-split.mod-root .markdown-preview-view,
-.workspace-split.mod-root .cm-s-obsidian,
-.workspace-split.mod-root .markdown-source-view {
+
+.workspace,
+.workspace-ribbon,
+.workspace-split,
+.workspace-split.mod-root,
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split,
+.workspace-tabs,
+.workspace-tab-header-container,
+.workspace-leaf-content,
+.view-content,
+.markdown-preview-view,
+.cm-s-obsidian,
+.markdown-source-view {
   background-color: transparent !important;
 }
+
 /* Fix gaps left by sidebars when they are collapsed */
 .workspace-split.mod-left-split.is-collapsed,
 .workspace-split.mod-right-split.is-collapsed {
