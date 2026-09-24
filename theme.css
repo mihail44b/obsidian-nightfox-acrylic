@@ -1,0 +1,123 @@
+/* ===================================================
+   Nightfox Acrylic for Obsidian
+   Author: Mihail
+   Inspired by: Nightfox (Zed Editor / Neovim)
+   Flavor: Carbonfox (Acrylic)
+   =================================================== */
+
+.theme-dark {
+  /* Carbonfox Palette */
+  --cf-fg: #f2f4f8;
+  --cf-fg-muted: #8b8d91;
+  --cf-border: rgba(55, 55, 55, 0.6);
+
+  --cf-blue: #78a9ff;
+  --cf-teal: #08bdba;
+  --cf-green: #25be6a;
+  --cf-purple: #be95ff;
+  --cf-magenta: #ee5396;
+  --cf-cyan: #3ddbd9;
+
+  /* Translucent base layers for Acrylic/Glass compositing */
+  --background-primary: transparent !important;
+  --background-primary-alt: transparent !important;
+  --background-secondary: transparent !important;
+  --background-secondary-alt: transparent !important;
+
+  /* Typography & accents */
+  --text-normal: var(--cf-fg) !important;
+  --text-muted: var(--cf-fg-muted) !important;
+  --text-accent: var(--cf-teal) !important;
+  --divider-color: var(--cf-border) !important;
+
+  /* Headings */
+  --h1-color: var(--cf-blue) !important;
+  --h2-color: var(--cf-teal) !important;
+  --h3-color: var(--cf-green) !important;
+  --h4-color: var(--cf-purple) !important;
+  --h5-color: var(--cf-magenta) !important;
+  --h6-color: var(--cf-cyan) !important;
+}
+
+/* 1. Carbonfox Tint Overlay on top of native Acrylic / Backdrop Blur */
+.app-container {
+  background-color: rgba(22, 22, 22, 0.70) !important;
+}
+
+/* 2. Full transparency for inner workspace containers to allow blur through */
+.workspace,
+.workspace-leaf,
+.workspace-leaf-content,
+.view-content,
+.markdown-source-view,
+.markdown-reading-view,
+.markdown-preview-view,
+.cm-editor,
+.cm-scroller {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 3. Left sidebar & ribbon — subtly darkened for clear visual hierarchy */
+.workspace-split.mod-left-split,
+.workspace-ribbon.mod-left {
+  background-color: rgba(0, 0, 0, 0.20) !important;
+  border-right: 1px solid var(--cf-border) !important;
+}
+
+/* 4. Crisp high-contrast text in file explorer (Zed-like) */
+.nav-folder-title,
+.nav-file-title,
+.tree-item-self .tree-item-inner {
+  color: #f2f4f8 !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+}
+
+.nav-folder-collapse-indicator {
+  color: #7b7c7e !important;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  color: var(--cf-teal) !important;
+  background-color: rgba(8, 189, 186, 0.15) !important;
+  font-weight: 600 !important;
+}
+
+/* 5. Tab bar & Status bar */
+.workspace-tab-header-container {
+  background: rgba(0, 0, 0, 0.25) !important;
+  border-bottom: 1px solid var(--cf-border) !important;
+}
+
+.workspace-tab-header.is-active {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 2px solid var(--cf-teal) !important;
+  color: #ffffff !important;
+}
+
+.status-bar {
+  background: rgba(0, 0, 0, 0.30) !important;
+  border-top: 1px solid var(--cf-border) !important;
+  color: var(--cf-fg-muted) !important;
+}
+
+/* 6. Code blocks & inline code */
+.markdown-rendered pre {
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid var(--cf-border) !important;
+  border-radius: 6px;
+}
+
+:not(pre) > code {
+  color: var(--cf-teal) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px;
+}

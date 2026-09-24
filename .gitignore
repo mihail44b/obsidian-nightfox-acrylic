@@ -1,0 +1,17 @@
+
+README.md
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Obsidian local cache if tested directly
+.obsidian/workspace*
+.obsidian/cache
