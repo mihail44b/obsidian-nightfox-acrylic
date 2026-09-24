@@ -1,4 +1,4 @@
-﻿/*
+/*
 
 
 /*
@@ -839,30 +839,62 @@ body .markdown-source-view.mod-cm6 .cm-em {
 .markdown-source-view.mod-cm6 .cm-header-6 {
   color: var(--cf-pink) !important;
 }
-/* Global Unified Glass Effect (80% opacity across the ENTIRE app) */
-body {
-  background-color: rgba(22, 22, 22, 0.8) !important;
+/* --- Ultimate Glass Structure Fix --- */
+
+/* 1. Remove all backgrounds from parent containers so nothing stacks */
+body,
+.app-container,
+.workspace,
+.workspace-split,
+.workspace-split.mod-root,
+.workspace-tabs,
+.workspace-leaf {
+  background-color: transparent !important;
   background-image: none !important;
 }
 
-.workspace,
+/* 2. Sidebars, Ribbons, and Tab Headers (Edges) -> 50% opacity */
 .workspace-ribbon,
-.workspace-split,
-.workspace-split.mod-root,
 .workspace-split.mod-left-split,
 .workspace-split.mod-right-split,
-.workspace-tabs,
-.workspace-tab-header-container,
-.workspace-leaf-content,
-.view-content,
-.markdown-preview-view,
-.cm-s-obsidian,
-.markdown-source-view {
-  background-color: transparent !important;
+.workspace-tab-header-container {
+  background-color: rgba(22, 22, 22, 0.5) !important;
 }
 
-/* Fix gaps left by sidebars when they are collapsed */
+/* 3. Central Note Area -> Darker (75% opacity) */
+.workspace-leaf-content {
+  background-color: rgba(22, 22, 22, 0.75) !important;
+}
+
+/* 4. Force all inner text wrappers to be transparent so they don't create dark boxes/stacking */
+.view-content,
+.view-header,
+.markdown-preview-view,
+.markdown-source-view,
+.cm-s-obsidian,
+.cm-scroller,
+.cm-sizer,
+.cm-content,
+.markdown-preview-sizer {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* 5. Fix gaps left by sidebars when they are collapsed */
 .workspace-split.mod-left-split.is-collapsed,
 .workspace-split.mod-right-split.is-collapsed {
   padding: 0 !important;
+}
+/* Fix ugly corners on active tabs for glass themes */
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+  display: none !important;
+}
+.workspace-tab-header.is-active {
+  /* Tab container is 0.5. Layering another 0.5 gives EXACTLY 0.75 opacity mathematically */
+  background-color: rgba(22, 22, 22, 0.5) !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+  background-color: transparent !important;
 }
