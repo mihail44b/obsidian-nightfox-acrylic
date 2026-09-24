@@ -1,0 +1,816 @@
+/*
+name: Carbonfox Acrylic
+author: Mihail
+description: Zed-inspired Carbonfox (Nightfox) glass theme for Obsidian. Based on Blur theme by Jawuj.
+version: 0.2.0
+*/
+
+/* ────────────────────────────────────────────────
+    STYLE SETTINGS (requires Style Settings plugin)
+   ──────────────────────────────────────────────── */
+/* @settings
+name: Carbonfox Acrylic
+id: carbonfox-acrylic
+settings:
+  - id: wallpaper-heading
+    title: Background
+    type: heading
+    level: 2
+  - id: custom-wallpaper
+    title: Custom Wallpaper URL
+    description: "Paste a direct image link: url(https://example.com/image.png). Leave as 'none' to use system blur only."
+    type: variable-text
+    default: "none"
+  - id: bg-opacity
+    title: Tint Opacity (Background Darkness)
+    description: "Controls how dark the tinted overlay is. Lower = more wallpaper/blur visible, higher = darker. Default: 0.70"
+    type: variable-number-slider
+    default: 0.70
+    min: 0.20
+    max: 0.95
+    step: 0.05
+  - id: blur-radius
+    title: Blur Radius (px)
+    description: "Backdrop blur strength for the editor area. Only affects built-in wallpaper, not system blur. Default: 12"
+    type: variable-number-slider
+    default: 12
+    min: 0
+    max: 30
+    step: 2
+  - id: glass-heading
+    title: Glass Effects
+    type: heading
+    level: 2
+  - id: toggle-blur
+    title: Enable Backdrop Blur
+    description: "Toggle the CSS backdrop-filter blur on the editor. Disable if using system-level blur only."
+    type: class-toggle
+    default: true
+  - id: toggle-darken-notes
+    title: Enable Editor Tint
+    description: "Toggle the dark tinted overlay on the editor background."
+    type: class-toggle
+    default: true
+*/
+
+/* ────────────────────────────────────────────────
+   ROOT VARIABLES
+   ──────────────────────────────────────────────── */
+:root {
+  --custom-wallpaper: none;
+  --bg-opacity: 0.30;
+  --blur-radius: 12px;
+}
+
+/* ────────────────────────────────────────────────
+   BACKGROUND IMAGE (built-in wallpaper fallback)
+   ──────────────────────────────────────────────── */
+body {
+  background-color: transparent !important;
+  background-image: var(--custom-wallpaper);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ────────────────────────────────────────────────
+   CARBONFOX PALETTE
+   Source: EdenEast/nightfox.nvim (Zed port)
+   ──────────────────────────────────────────────── */
+.theme-dark {
+  /* Base tones */
+  --cf-bg: #161616;
+  --cf-sidebar: #0c0c0c;
+  --cf-elevated: #2a2a2a;
+  --cf-border: #353535;
+
+  /* Foreground */
+  --cf-fg: #f2f4f8;
+  --cf-fg-muted: #b6b8bb;
+  --cf-fg-faint: #7b7c7e;
+  --cf-fg-dim: #6e6f70;
+
+  /* Accent palette */
+  --cf-blue: #78a9ff;
+  --cf-blue-bright: #8cb6ff;
+  --cf-teal: #08bdba;
+  --cf-cyan: #3ddbd9;
+  --cf-cyan-light: #5ae0df;
+  --cf-sky: #33b1ff;
+  --cf-sky-light: #52bdff;
+  --cf-green: #25be6a;
+  --cf-green-bright: #46c880;
+  --cf-purple: #be95ff;
+  --cf-purple-bright: #c8a5ff;
+  --cf-magenta: #ee5396;
+  --cf-magenta-bright: #f16da6;
+  --cf-pink: #ff7eb6;
+  --cf-pink-bright: #ff91c1;
+  --cf-red: #ee5396;
+  --cf-red-bright: #f16da6;
+
+  /* ── Obsidian theme variables ── */
+  --background-primary: transparent;
+  --background-primary-alt: transparent;
+  --background-secondary: transparent;
+  --background-secondary-alt: transparent;
+  --background-modifier-cover: transparent;
+  --background-modifier-border: rgba(53, 53, 53, 0.5);
+  --background-editor: transparent;
+  --background-code: transparent;
+
+  --text-normal: var(--cf-fg);
+  --text-muted: var(--cf-fg-muted);
+  --text-faint: var(--cf-fg-faint);
+  --text-on-accent: #ffffff;
+  --text-accent: var(--cf-teal);
+  --text-accent-hover: var(--cf-cyan);
+  --text-selection: rgba(82, 82, 83, 0.45);
+  --text-highlight-bg: rgba(8, 189, 186, 0.18);
+
+  --interactive-accent: var(--cf-blue);
+  --interactive-accent-hover: var(--cf-blue-bright);
+  --divider-color: rgba(53, 53, 53, 0.5);
+
+  /* Headings (только бирюзовый, синий и красный) */
+  --h1-color: var(--cf-teal);
+  --h2-color: var(--cf-blue);
+  --h3-color: var(--cf-red);
+  --h4-color: var(--cf-teal);
+  --h5-color: var(--cf-blue);
+  --h6-color: var(--cf-red);
+
+  /* Inline title (название заметки / файла) */
+  --inline-title-color: var(--cf-teal);
+
+  /* Tags */
+  --tag-color: var(--cf-teal);
+  --tag-background: rgba(8, 189, 186, 0.12);
+  --tag-border-color: rgba(8, 189, 186, 0.25);
+
+  /* Links */
+  --link-color: var(--cf-blue);
+  --link-color-hover: var(--cf-blue-bright);
+  --link-external-color: var(--cf-sky);
+  --link-external-color-hover: var(--cf-sky-light);
+  --link-unresolved-color: var(--cf-purple);
+
+  /* Bold / Italic */
+  --bold-color: var(--cf-magenta);
+  --italic-color: var(--cf-pink-bright);
+
+  /* Code */
+  --code-normal: var(--cf-fg);
+  --code-comment: var(--cf-fg-dim);
+  --code-function: var(--cf-blue-bright);
+  --code-important: var(--cf-magenta);
+  --code-keyword: var(--cf-purple);
+  --code-operator: var(--cf-fg-muted);
+  --code-property: var(--cf-blue);
+  --code-punctuation: var(--cf-fg-muted);
+  --code-string: var(--cf-green);
+  --code-tag: var(--cf-purple);
+  --code-value: var(--cf-cyan-light);
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(42, 42, 42, 0.9);
+  --scrollbar-active-thumb-bg: rgba(61, 219, 217, 0.5);
+}
+
+/* ────────────────────────────────────────────────
+   MAIN EDITOR AREA (Glass cards)
+   ──────────────────────────────────────────────── */
+.workspace-leaf-content,
+.markdown-preview-view,
+.cm-s-obsidian {
+  background-color: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(var(--blur-radius, 12px));
+  -webkit-backdrop-filter: blur(var(--blur-radius, 12px));
+  border-radius: 8px;
+  padding: 10px;
+  contain: layout style paint;
+}
+
+/* ────────────────────────────────────────────────
+   FULL TRANSPARENCY FOR NESTED CONTAINERS
+   ──────────────────────────────────────────────── */
+.app-container,
+.horizontal-main-container,
+.workspace,
+.workspace-leaf,
+.view-content,
+.markdown-source-view,
+.markdown-reading-view,
+.cm-editor,
+.cm-scroller {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ────────────────────────────────────────────────
+   LEFT / RIGHT SIDEBAR
+   ──────────────────────────────────────────────── */
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  background: transparent;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.workspace-ribbon.mod-left {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  border-right: 1px solid var(--divider-color) !important;
+}
+
+/* ── File tree ── */
+.nav-folder-title,
+.nav-file-title,
+.tree-item-self .tree-item-inner {
+  color: var(--cf-fg) !important;
+  font-weight: 500 !important;
+}
+
+.nav-folder-collapse-indicator {
+  color: var(--cf-fg-faint) !important;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  color: var(--cf-teal) !important;
+  background-color: rgba(8, 189, 186, 0.14) !important;
+  font-weight: 600 !important;
+}
+
+/* ────────────────────────────────────────────────
+   TAB BAR
+   ──────────────────────────────────────────────── */
+.workspace-tab-header-container {
+  background: rgba(0, 0, 0, 0.25) !important;
+  border-bottom: 1px solid var(--divider-color) !important;
+}
+
+.workspace-tab-header { border: none; }
+
+.workspace-tab-header.is-active {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 2px solid var(--cf-teal) !important;
+  color: #ffffff !important;
+}
+
+/* ────────────────────────────────────────────────
+   STATUS BAR
+   ──────────────────────────────────────────────── */
+.status-bar {
+  background: rgba(0, 0, 0, 0.30) !important;
+  border-top: 1px solid var(--divider-color) !important;
+  color: var(--cf-fg-faint) !important;
+}
+
+/* ────────────────────────────────────────────────
+   MODALS & MENUS
+   ──────────────────────────────────────────────── */
+.popover,
+.popover.menu-container,
+.mod-context-menu,
+.menu,
+.menu-list,
+.menu-item,
+.modal,
+.modal.mod-settings,
+.modal.mod-community-modal,
+.modal.mod-community-modal .modal-sidebar,
+.modal.mod-community-modal .vertical-tab-content,
+.modal.mod-community-modal .setting-item,
+.modal.suggester-modal,
+.modal.file-search-modal,
+.modal-search,
+.suggestion-container,
+.suggestion-popover {
+  background-color: rgba(12, 12, 12, 0.7);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  border: 1px solid rgba(53, 53, 53, 0.4);
+  border-radius: 14px;
+  color: var(--cf-fg);
+  isolation: isolate;
+  contain: layout style paint;
+}
+
+/* ────────────────────────────────────────────────
+   PROMPT STYLING (Ctrl+P, Ctrl+O)
+   ──────────────────────────────────────────────── */
+body {
+  --prompt-input-height: 2.4em;
+  --prompt-width: 100%;
+  --prompt-max-width: 720px;
+  --prompt-max-height: 600px;
+}
+
+.modal.modal-search,
+.modal.suggester-modal,
+.modal.file-search-modal,
+.suggestion-container,
+.prompt,
+.prompt-results {
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  border-radius: 14px;
+  max-width: var(--prompt-max-width);
+  max-height: var(--prompt-max-height);
+  color: var(--cf-fg);
+}
+
+input.suggestion-input,
+.modal input,
+input.prompt-input {
+  height: var(--prompt-input-height);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cf-fg);
+  border: 1px solid rgba(53, 53, 53, 0.5);
+  border-radius: 8px;
+}
+
+/* ────────────────────────────────────────────────
+   TEXT SELECTION
+   ──────────────────────────────────────────────── */
+body ::selection {
+  background-color: rgba(120, 169, 255, 0.25);
+  color: var(--cf-fg);
+}
+
+.cm-editor .cm-selectionBackground,
+.cm-editor.cm-focused .cm-selectionBackground {
+  background-color: rgba(120, 169, 255, 0.25) !important;
+}
+
+/* ────────────────────────────────────────────────
+   ANIMATIONS
+   ──────────────────────────────────────────────── */
+.modal.mod-settings,
+.modal.mod-command-palette {
+  opacity: 0;
+  transform: scale(0.96) translateY(10px);
+  animation: settingsFadeIn 200ms ease-out forwards;
+}
+
+@keyframes settingsFadeIn {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ────────────────────────────────────────────────
+   CODE BLOCKS
+   ──────────────────────────────────────────────── */
+.markdown-rendered pre,
+.markdown-preview-view pre {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border: 1px solid rgba(53, 53, 53, 0.5) !important;
+  border-radius: 6px;
+}
+
+:not(pre) > code {
+  color: var(--cf-cyan) !important;
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+.markdown-source-view.mod-cm6 .cm-line span.cm-formatting.cm-formatting-code-block,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ────────────────────────────────────────────────
+   TAGS
+   ──────────────────────────────────────────────── */
+.tag,
+.cm-tag {
+  background-color: var(--tag-background) !important;
+  color: var(--tag-color) !important;
+  border: 1px solid var(--tag-border-color) !important;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* ────────────────────────────────────────────────
+   EMBEDS
+   ──────────────────────────────────────────────── */
+.markdown-embed,
+.markdown-embed-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.markdown-embed::before,
+.markdown-embed-content::before { display: none; }
+
+.markdown-embed-title {
+  background: transparent;
+  border: none;
+}
+
+/* ────────────────────────────────────────────────
+   TABLES
+   ──────────────────────────────────────────────── */
+.markdown-preview-view table,
+.cm-preview table,
+.markdown-source-view.mod-cm6 table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95rem;
+  margin: 1.2em 0;
+  background: transparent !important;
+  border: 1px solid rgba(53, 53, 53, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.markdown-preview-view th,
+.cm-preview th,
+.markdown-source-view.mod-cm6 th {
+  background: rgba(42, 42, 42, 0.3) !important;
+  color: var(--cf-fg);
+  padding: 0.6em 0.8em;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(53, 53, 53, 0.5);
+}
+
+.markdown-preview-view td,
+.cm-preview td,
+.markdown-source-view.mod-cm6 td {
+  padding: 0.55em 0.8em;
+  text-align: left;
+  border-bottom: 1px solid rgba(53, 53, 53, 0.3);
+  color: var(--cf-fg-muted);
+  background: transparent !important;
+}
+
+.markdown-preview-view tr:nth-child(even),
+.cm-preview tr:nth-child(even),
+.markdown-source-view.mod-cm6 tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.markdown-preview-view td,
+.markdown-preview-view th,
+.cm-preview td,
+.cm-preview th,
+.markdown-source-view.mod-cm6 td,
+.markdown-source-view.mod-cm6 th {
+  border: 1px solid rgba(53, 53, 53, 0.35);
+}
+
+.markdown-preview-view tr:hover,
+.cm-preview tr:hover,
+.markdown-source-view.mod-cm6 tr:hover {
+  background-color: rgba(120, 169, 255, 0.06) !important;
+}
+
+/* ────────────────────────────────────────────────
+   CHECKBOXES
+   ──────────────────────────────────────────────── */
+.markdown-preview-view input[type="checkbox"],
+.cm-s-obsidian input[type="checkbox"],
+input.task-list-item-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0 6px 0 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  transition: all .15s ease;
+}
+
+.markdown-preview-view input[type="checkbox"]:hover,
+.cm-s-obsidian input[type="checkbox"]:hover,
+input.task-list-item-checkbox:hover {
+  border-color: var(--cf-teal);
+  transform: translateY(-1px);
+}
+
+.markdown-preview-view input[type="checkbox"]:checked,
+.cm-s-obsidian input[type="checkbox"]:checked,
+input.task-list-item-checkbox:checked,
+.task-list-item-checkbox[checked="true"] {
+  background: var(--cf-teal) !important;
+  border-color: var(--cf-teal) !important;
+}
+
+.markdown-preview-view input[type="checkbox"]:checked::after,
+.cm-s-obsidian input[type="checkbox"]:checked::after,
+input.task-list-item-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ────────────────────────────────────────────────
+   HOVER EFFECTS
+   ──────────────────────────────────────────────── */
+.search-result-file-title:hover,
+.search-result-file-match:hover,
+.search-result-hover:hover,
+.tree-item-self.is-clickable:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--cf-fg);
+}
+
+/* ────────────────────────────────────────────────
+   INPUTS (Preview + Editor)
+   ──────────────────────────────────────────────── */
+.markdown-preview-view input[type="text"],
+.markdown-preview-view input[type="number"],
+.markdown-preview-view textarea,
+.cm-editor input[type="text"],
+.cm-editor input[type="number"],
+.cm-editor textarea {
+  display: inline-block;
+  min-width: 170px;
+  max-width: 420px;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(53, 53, 53, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--cf-fg);
+  transition: transform .12s ease, border-color .12s ease;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.markdown-preview-view input:focus,
+.markdown-preview-view textarea:focus,
+.cm-editor input:focus,
+.cm-editor textarea:focus {
+  transform: translateY(-1px);
+  border-color: var(--cf-teal);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--cf-fg-faint);
+  font-style: italic;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ────────────────────────────────────────────────
+   DROPDOWN SELECTS
+   ──────────────────────────────────────────────── */
+select,
+.modal select,
+.popover select,
+.setting-item-control select,
+.css-settings-manager select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(53, 53, 53, 0.5);
+  border-radius: 8px;
+  color: var(--cf-fg);
+  padding: 0.4em 2.4em 0.4em 0.8em;
+  cursor: pointer;
+  color-scheme: dark;
+  transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
+}
+
+.setting-item-control select.dropdown,
+select.dropdown {
+  color: var(--cf-fg) !important;
+}
+
+select.dropdown option {
+  color: #000000 !important;
+  background-color: #ffffff;
+}
+
+select:hover,
+.setting-item-control select:hover {
+  transform: translateY(-1px);
+  border-color: var(--cf-teal) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+select:focus,
+select:active,
+.setting-item-control select:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+select option {
+  background-color: #161616;
+  color: var(--cf-fg);
+}
+
+/* ────────────────────────────────────────────────
+   STYLE SETTINGS TEXT INPUTS
+   ──────────────────────────────────────────────── */
+.setting-item-control input[type="text"],
+.setting-item-control input[type="search"],
+.setting-item-control input[type="number"] {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(53, 53, 53, 0.5);
+  border-radius: 8px;
+  color: var(--cf-fg);
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+
+.setting-item-control input[type="text"]:focus,
+.setting-item-control input[type="search"]:focus,
+.setting-item-control input[type="number"]:focus {
+  outline: none;
+  border-color: var(--cf-teal);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ────────────────────────────────────────────────
+   BUTTONS
+   ──────────────────────────────────────────────── */
+button:not(.clickable-icon),
+.setting-item-control button,
+.vertical-tab-content button,
+.modal button,
+.community-modal-installed-tab button {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--cf-fg) !important;
+  border: 1px solid rgba(53, 53, 53, 0.5) !important;
+  border-radius: 8px !important;
+  padding: 6px 14px;
+  font-weight: 500;
+  transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
+  cursor: pointer;
+}
+
+button:not(.clickable-icon):hover,
+.setting-item-control button:hover,
+.vertical-tab-content button:hover,
+.modal button:hover,
+.community-modal-installed-tab button:hover {
+  border-color: var(--cf-teal) !important;
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  transform: translateY(-1px);
+}
+
+button.mod-cta,
+.setting-item-control button.mod-cta {
+  background-color: var(--cf-blue) !important;
+  border-color: var(--cf-blue) !important;
+}
+
+button.mod-cta:hover,
+.setting-item-control button.mod-cta:hover {
+  filter: brightness(1.15);
+}
+
+.clickable-icon:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-radius: 6px;
+}
+
+/* ────────────────────────────────────────────────
+   SEARCH BOXES
+   ──────────────────────────────────────────────── */
+.search-input-container input,
+input[type="search"],
+.prompt-input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(53, 53, 53, 0.5) !important;
+  border-radius: 8px !important;
+  color: var(--cf-fg) !important;
+  transition: transform .12s ease, border-color .12s ease;
+}
+
+.search-input-container input:focus,
+input[type="search"]:focus {
+  outline: none;
+  transform: translateY(-1px);
+  border-color: var(--cf-teal) !important;
+}
+
+/* ────────────────────────────────────────────────
+   UI CLEANUP
+   ──────────────────────────────────────────────── */
+.no-inline .inline-title { display: none; }
+
+/* ────────────────────────────────────────────────
+   WIDE PAGE MODE
+   ──────────────────────────────────────────────── */
+.wide-page {
+  --file-line-width: 100%;
+}
+
+.wide-page .markdown-preview-view,
+.wide-page .cm-s-obsidian {
+  width: 100%;
+  background-color: rgba(18, 18, 18, 0.90);
+  backdrop-filter: blur(var(--blur-radius, 12px));
+  -webkit-backdrop-filter: blur(var(--blur-radius, 12px));
+  padding: 10px;
+  margin: 0 auto;
+}
+
+/* ────────────────────────────────────────────────
+   HOME TAB PLUGIN FIX
+   ──────────────────────────────────────────────── */
+.home-tab-searchbar {
+  background-color: rgba(42, 42, 42, 0.3) !important;
+}
+
+.home-tab-searchbar:focus-within {
+  background-color: rgba(42, 42, 42, 0.4) !important;
+}
+
+.home-tab-searchbar input[type="search"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--cf-fg) !important;
+}
+
+.home-tab-searchbar input::placeholder {
+  color: var(--cf-fg-faint);
+  font-style: italic;
+}
+
+[class*="home-tab"][class*="suggestion"] {
+  background-color: rgba(12, 12, 12, 0.6) !important;
+  border-top: none !important;
+}
+
+[class*="home-tab"][class*="suggestion"] *,
+[class*="home-tab"][class*="suggestion-item"] {
+  background-color: transparent !important;
+  color: var(--cf-fg);
+}
+
+.suggestion-item.is-selected,
+[class*="suggestion-item"].is-selected,
+.suggestion-item:hover,
+[class*="suggestion-item"]:hover {
+  background-color: rgba(120, 169, 255, 0.1) !important;
+  color: var(--cf-fg) !important;
+  border-radius: 6px;
+}
+
+/* ────────────────────────────────────────────────
+   TOGGLE: BLUR OFF
+   ──────────────────────────────────────────────── */
+body:not(.toggle-blur) .workspace-leaf-content,
+body:not(.toggle-blur) .markdown-preview-view,
+body:not(.toggle-blur) .cm-s-obsidian,
+body:not(.toggle-blur) .wide-page .markdown-preview-view,
+body:not(.toggle-blur) .wide-page .cm-s-obsidian {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ────────────────────────────────────────────────
+   TOGGLE: DARKEN OFF
+   ──────────────────────────────────────────────── */
+body:not(.toggle-darken-notes) .workspace-leaf-content,
+body:not(.toggle-darken-notes) .markdown-preview-view,
+body:not(.toggle-darken-notes) .cm-s-obsidian,
+body:not(.toggle-darken-notes) .wide-page .markdown-preview-view,
+body:not(.toggle-darken-notes) .wide-page .cm-s-obsidian {
+  background-color: transparent !important;
+}
