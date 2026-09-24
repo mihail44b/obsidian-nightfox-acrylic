@@ -1,6 +1,6 @@
 /*
 name: Carbonfox Acrylic
-author: Mihail
+author: mihail
 description: Zed-inspired Carbonfox (Nightfox) glass theme for Obsidian. Based on Blur theme by Jawuj.
 version: 0.2.0
 */
@@ -77,7 +77,8 @@ body {
    CARBONFOX PALETTE
    Source: EdenEast/nightfox.nvim (Zed port)
    ──────────────────────────────────────────────── */
-.theme-dark {
+.theme-dark,
+.theme-light {
   /* Base tones */
   --cf-bg: #161616;
   --cf-sidebar: #0c0c0c;

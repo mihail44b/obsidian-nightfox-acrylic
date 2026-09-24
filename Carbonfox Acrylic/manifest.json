@@ -2,6 +2,9 @@
   "name": "Carbonfox Acrylic",
   "version": "0.2.0",
   "minAppVersion": "1.5.0",
-  "author": "Mihail",
-  "authorUrl": "https://github.com"
+  "author": "mihail",
+  "authorUrl": "https://github.com/mihail44b",
+  "modes": [
+    "dark"
+  ]
 }
