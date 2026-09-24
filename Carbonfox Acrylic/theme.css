@@ -186,11 +186,8 @@ body {
 .markdown-preview-view,
 .cm-s-obsidian {
   background-color: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(var(--blur-radius, 12px));
-  -webkit-backdrop-filter: blur(var(--blur-radius, 12px));
   border-radius: 8px;
   padding: 10px;
-  contain: layout style paint;
 }
 
 /* ────────────────────────────────────────────────
@@ -294,14 +291,10 @@ body {
 .modal-search,
 .suggestion-container,
 .suggestion-popover {
-  background-color: rgba(12, 12, 12, 0.7);
-  backdrop-filter: blur(26px);
-  -webkit-backdrop-filter: blur(26px);
+  background-color: rgba(18, 18, 18, 0.92);
   border: 1px solid rgba(53, 53, 53, 0.4);
   border-radius: 14px;
   color: var(--cf-fg);
-  isolation: isolate;
-  contain: layout style paint;
 }
 
 /* ────────────────────────────────────────────────
@@ -320,8 +313,6 @@ body {
 .suggestion-container,
 .prompt,
 .prompt-results {
-  backdrop-filter: blur(26px);
-  -webkit-backdrop-filter: blur(26px);
   border-radius: 14px;
   max-width: var(--prompt-max-width);
   max-height: var(--prompt-max-height);
@@ -744,8 +735,6 @@ input[type="search"]:focus {
 .wide-page .cm-s-obsidian {
   width: 100%;
   background-color: rgba(18, 18, 18, 0.90);
-  backdrop-filter: blur(var(--blur-radius, 12px));
-  -webkit-backdrop-filter: blur(var(--blur-radius, 12px));
   padding: 10px;
   margin: 0 auto;
 }
