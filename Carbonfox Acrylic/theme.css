@@ -806,11 +806,9 @@ body.theme-dark .mb-button.sepia-glow > button:hover {
   --interactive-accent: var(--cf-blue) !important;
   --text-selection: rgba(120, 169, 255, 0.2) !important;
   
-  /* Main note area and sidebars 80% opacity */
+  /* Main note area background 80% opacity */
   --background-primary: rgba(22, 22, 22, 0.8) !important;
   --background-primary-alt: rgba(22, 22, 22, 0.8) !important;
-  --background-secondary: rgba(22, 22, 22, 0.8) !important;
-  --background-secondary-alt: rgba(22, 22, 22, 0.8) !important;
 }
 
 /* Italics (Pink) */
@@ -840,4 +838,21 @@ body .markdown-source-view.mod-cm6 .cm-em {
 .markdown-preview-view h6,
 .markdown-source-view.mod-cm6 .cm-header-6 {
   color: var(--cf-pink) !important;
+}
+/* Fix for the glassy 'void' around the text editor */
+.workspace-split.mod-root .workspace-tabs,
+.workspace-split.mod-root .workspace-leaf-content,
+.workspace-split.mod-root .workspace-tab-header-container {
+  background-color: rgba(22, 22, 22, 0.8) !important;
+}
+.workspace-split.mod-root .view-content,
+.workspace-split.mod-root .markdown-preview-view,
+.workspace-split.mod-root .cm-s-obsidian,
+.workspace-split.mod-root .markdown-source-view {
+  background-color: transparent !important;
+}
+/* Fix gaps left by sidebars when they are collapsed */
+.workspace-split.mod-left-split.is-collapsed,
+.workspace-split.mod-right-split.is-collapsed {
+  padding: 0 !important;
 }
