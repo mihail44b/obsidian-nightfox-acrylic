@@ -152,23 +152,11 @@ body {
    ============================================================================== */
 
 .workspace-leaf-content,
-
 .markdown-preview-view,
-
 .cm-s-obsidian {
-
   background-color: rgba(0, 0, 0, 0.12);
-
-  backdrop-filter: blur(12px);
-
-  -webkit-backdrop-filter: blur(12px);
-
   border-radius: 14px;
-
   padding: 10px;
-
-  contain: layout style paint;
-
 }
 
 /* ==============================================================================
@@ -187,7 +175,7 @@ body {
 
   --background-secondary-alt: transparent;
 
-  --background-modifier-cover: transparent;
+  --background-modifier-cover: rgba(0, 0, 0, 0.45);
 
   --background-modifier-border: rgba(255, 255, 255, 0.05);
 
@@ -221,15 +209,10 @@ body {
    ============================================================================== */
 
 .workspace-split.mod-left-split,
-
 .workspace-split.mod-right-split {
-
   background: transparent;
-
   padding: 8px;
-
   border-radius: 12px;
-
 }
 
 /* ==============================================================================
@@ -238,55 +221,37 @@ body {
    ============================================================================== */
 
 .popover,
-
 .popover.menu-container,
-
 .mod-context-menu,
-
 .menu,
-
 .menu-list,
-
-.menu-item,
-
 .modal,
-
 .modal.mod-settings,
-
 .modal.mod-community-modal,
+.modal.suggester-modal,
+.modal.file-search-modal,
+.modal-search,
+.suggestion-container,
+.suggestion-popover {
+  background-color: rgba(22, 22, 22, 0.96) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  transform: translateZ(0);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75) !important;
+  color: #fff;
+}
 
 .modal.mod-community-modal .modal-sidebar,
-
 .modal.mod-community-modal .vertical-tab-content,
-
-.modal.mod-community-modal .setting-item,
-
-.modal.suggester-modal,
-
-.modal.file-search-modal,
-
-.modal-search,
-
-.suggestion-container,
-
-.suggestion-popover {
-
-  background-color: transparent;
-
-  backdrop-filter: blur(26px);
-
-  -webkit-backdrop-filter: blur(26px);
-
+.modal.mod-community-modal .setting-item {
+  background-color: transparent !important;
   border: none;
+}
 
-  border-radius: 18px;
-
-  color: #fff;
-
-  isolation: isolate;
-
-  contain: layout style paint;
-
+.modal-bg {
+  background-color: rgba(0, 0, 0, 0.65) !important;
 }
 
 .setting-item-control select.dropdown,
@@ -326,25 +291,23 @@ body {
 .modal.suggester-modal,
 
 .modal.file-search-modal,
-
 .suggestion-container,
-
-.prompt,
+.prompt {
+  background-color: rgba(22, 22, 22, 0.96) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  transform: translateZ(0);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75) !important;
+  max-width: var(--prompt-max-width);
+  max-height: var(--prompt-max-height);
+  color: #fff;
+}
 
 .prompt-results {
-
-  backdrop-filter: blur(26px);
-
-  -webkit-backdrop-filter: blur(26px);
-
-  border-radius: 18px;
-
-  max-width: var(--prompt-max-width);
-
-  max-height: var(--prompt-max-height);
-
-  color: #fff;
-
+  background-color: transparent !important;
+  border: none;
 }
 
 /* Prompt input field */
@@ -1534,7 +1497,7 @@ body .markdown-source-view.mod-cm6 .cm-em {
   background-color: rgba(22, 22, 22, 0.5) !important;
 }
 
-/* Central Note Area -> 75% opacity for optimal text contrast */
+/* Central Note Area -> 75% opacity */
 .workspace-leaf-content {
   background-color: rgba(22, 22, 22, 0.75) !important;
 }
@@ -1558,16 +1521,24 @@ body .markdown-source-view.mod-cm6 .cm-em {
 .workspace-split.mod-right-split.is-collapsed {
   padding: 0 !important;
 }
-/* Remove opaque pseudo-element corners on active tabs for seamless glass look */
+
+/* Monolithic Tab Bar & Docked Active Tab */
+.workspace-tab-header-container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none !important;
+}
+
 .workspace-tab-header.is-active::before,
 .workspace-tab-header.is-active::after {
   display: none !important;
 }
+
 .workspace-tab-header.is-active {
-  /* Layering 0.5 opacity onto the 0.5 tab container produces exactly 0.75 opacity */
-  background-color: rgba(22, 22, 22, 0.5) !important;
-  border-radius: 8px 8px 0 0 !important;
+  background-color: rgba(22, 22, 22, 0.75) !important;
+  border-radius: 6px 6px 0 0 !important;
+  border-bottom: none !important;
 }
+
 .workspace-tab-header.is-active .workspace-tab-header-inner {
   background-color: transparent !important;
 }
