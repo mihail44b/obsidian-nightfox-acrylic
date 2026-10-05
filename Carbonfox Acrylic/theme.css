@@ -1503,7 +1503,6 @@ body .markdown-source-view.mod-cm6 .cm-em {
 /* Central Note Area -> 75% opacity */
 .workspace-leaf-content {
   background-color: rgba(22, 22, 22, 0.75) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 /* Force inner text wrappers transparent to prevent background stacking */
@@ -1568,7 +1567,7 @@ body .markdown-source-view.mod-cm6 .cm-em {
 
 .workspace-tab-header.is-active {
   background-color: rgba(36, 36, 40, 0.85) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border: none !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
   border-radius: 8px !important;
 }
