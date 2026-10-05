@@ -1492,11 +1492,10 @@ body .markdown-source-view.mod-cm6 .cm-em {
 
 
 
-/* Sidebars, Ribbons, and Tab Headers (Edges) -> 50% opacity */
+/* Sidebars and Ribbons (Edges) -> 50% opacity */
 .workspace-ribbon,
 .workspace-split.mod-left-split,
-.workspace-split.mod-right-split,
-.workspace-tab-header-container {
+.workspace-split.mod-right-split {
   background-color: rgba(22, 22, 22, 0.5) !important;
 }
 
@@ -1525,14 +1524,15 @@ body .markdown-source-view.mod-cm6 .cm-em {
   padding: 0 !important;
 }
 
-/* Remove weird rectangle around sidebar tab headers */
-.workspace-split.mod-left-split .workspace-tab-header-container,
-.workspace-split.mod-right-split .workspace-tab-header-container {
+/* Transparent split dividers and resize handles */
+.workspace-leaf-resize-handle {
   background-color: transparent !important;
+  border-color: transparent !important;
 }
 
-/* Floating Pill Tabs (All 4 corners smoothly rounded) */
+/* Floating Pill Tabs: transparent container across all splits & sidebars */
 .workspace-tab-header-container {
+  background-color: transparent !important;
   border-bottom: none !important;
   box-shadow: none !important;
 }
