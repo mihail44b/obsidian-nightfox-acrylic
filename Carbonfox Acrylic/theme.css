@@ -1503,6 +1503,7 @@ body .markdown-source-view.mod-cm6 .cm-em {
 /* Central Note Area -> 75% opacity */
 .workspace-leaf-content {
   background-color: rgba(22, 22, 22, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 /* Force inner text wrappers transparent to prevent background stacking */
@@ -1525,27 +1526,56 @@ body .markdown-source-view.mod-cm6 .cm-em {
   padding: 0 !important;
 }
 
+/* Remove weird rectangle around sidebar tab headers */
+.workspace-split.mod-left-split .workspace-tab-header-container,
+.workspace-split.mod-right-split .workspace-tab-header-container {
+  background-color: transparent !important;
+}
+
 /* Floating Pill Tabs (All 4 corners smoothly rounded) */
 .workspace-tab-header-container {
   border-bottom: none !important;
   box-shadow: none !important;
 }
 
-.workspace-tab-header,
-.workspace-tab-header.is-active {
+.workspace-tab-header {
   border-radius: 8px !important;
   margin: 2px 2px !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  transition: all 0.15s ease;
 }
 
+/* Inactive tabs: dimmed text so active tab clearly stands out */
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-title,
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-icon {
+  color: rgba(255, 255, 255, 0.50) !important;
+}
+
+.workspace-tab-header:not(.is-active):hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-title,
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-icon {
+  color: #ffffff !important;
+}
+
+/* Active tab: elevated frosted pill with crisp border and bright white text */
 .workspace-tab-header.is-active::before,
 .workspace-tab-header.is-active::after {
   display: none !important;
 }
 
 .workspace-tab-header.is-active {
-  background-color: rgba(22, 22, 22, 0.75) !important;
+  background-color: rgba(36, 36, 40, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
   border-radius: 8px !important;
-  border-bottom: none !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: #ffffff !important;
 }
 
 .workspace-tab-header .workspace-tab-header-inner,
