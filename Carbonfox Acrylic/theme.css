@@ -1525,10 +1525,16 @@ body .markdown-source-view.mod-cm6 .cm-em {
   padding: 0 !important;
 }
 
-/* Monolithic Tab Bar & Docked Active Tab */
+/* Floating Pill Tabs (All 4 corners smoothly rounded) */
 .workspace-tab-header-container {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-bottom: none !important;
   box-shadow: none !important;
+}
+
+.workspace-tab-header,
+.workspace-tab-header.is-active {
+  border-radius: 8px !important;
+  margin: 2px 2px !important;
 }
 
 .workspace-tab-header.is-active::before,
@@ -1538,11 +1544,13 @@ body .markdown-source-view.mod-cm6 .cm-em {
 
 .workspace-tab-header.is-active {
   background-color: rgba(22, 22, 22, 0.75) !important;
-  border-radius: 6px 6px 0 0 !important;
+  border-radius: 8px !important;
   border-bottom: none !important;
 }
 
+.workspace-tab-header .workspace-tab-header-inner,
 .workspace-tab-header.is-active .workspace-tab-header-inner {
+  border-radius: 8px !important;
   background-color: transparent !important;
 }
 
