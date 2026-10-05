@@ -1537,39 +1537,33 @@ body .markdown-source-view.mod-cm6 .cm-em {
   box-shadow: none !important;
 }
 
-.workspace-tab-header {
+.workspace-tab-header,
+.workspace-tab-header.is-active {
   border-radius: 8px !important;
   margin: 2px 2px !important;
-  background-color: transparent !important;
-  border: 1px solid transparent !important;
-  transition: all 0.15s ease;
 }
 
-/* Inactive tabs: dimmed text so active tab clearly stands out */
+/* Inactive tabs: dimmed text so active tab clearly stands out on all platforms */
 .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-title,
 .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-icon {
   color: rgba(255, 255, 255, 0.50) !important;
 }
 
-.workspace-tab-header:not(.is-active):hover {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-}
 .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-title,
 .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-icon {
   color: #ffffff !important;
 }
 
-/* Active tab: elevated frosted pill with crisp border and bright white text */
+/* Active tab: clean slim pill from commit 1b60abd */
 .workspace-tab-header.is-active::before,
 .workspace-tab-header.is-active::after {
   display: none !important;
 }
 
 .workspace-tab-header.is-active {
-  background-color: rgba(36, 36, 40, 0.85) !important;
-  border: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+  background-color: rgba(22, 22, 22, 0.75) !important;
   border-radius: 8px !important;
+  border-bottom: none !important;
 }
 
 .workspace-tab-header.is-active .workspace-tab-header-inner-title,
