@@ -181,7 +181,9 @@ body {
 
   --background-editor: transparent;
 
-  --background-code: transparent;
+  --background-code: #1a1a1a;
+
+  --code-background: #1a1a1a;
 
   --text-normal: #ffffff;
 
@@ -330,25 +332,7 @@ input.prompt-input {
 
 }
 
-/* ==============================================================================
-   EDITOR LABEL
-   ============================================================================== */
 
-.markdown-source-view.mod-cm6::before {
-
-  content: "Writing";
-
-  position: absolute;
-
-  top: 8px;
-
-  left: 12px;
-
-  font-size: 0.8em;
-
-  color: #73737388;
-
-}
 
 /* ==============================================================================
    TEXT SELECTION
@@ -678,22 +662,41 @@ body.brown-glow-general  { --glow-shadow: 0 0 2px #8b4513, 0 0 6px #a0522d, 0 0 
    CODE BLOCKS
    ============================================================================== */
 
+/* Code blocks in Reading view */
+.markdown-preview-view pre,
+.markdown-rendered pre {
+  background-color: #1a1a1a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+}
+
+.markdown-preview-view pre code,
+.markdown-rendered pre code {
+  background-color: transparent !important;
+}
+
+/* Code blocks in Live Preview / Editor */
 .markdown-source-view.mod-cm6 .cm-line span.cm-formatting.cm-formatting-code-block,
-
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-
-  background-color: rgba(0, 0, 0, 0.095);
-
+  background-color: #1a1a1a !important;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-
   border: none !important;
-
   box-shadow: none !important;
-
   outline: none !important;
+}
 
+/* Inline code snippets */
+.markdown-preview-view code:not(pre code),
+.markdown-rendered code:not(pre code),
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  background-color: #202020 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  color: var(--cf-cyan, #08bdba) !important;
 }
 
 /* ==============================================================================
