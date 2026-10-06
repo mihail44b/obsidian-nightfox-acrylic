@@ -1,0 +1,10 @@
+{
+  "name": "Dawnfox Acrylic",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "author": "mihail",
+  "authorUrl": "https://github.com/mihail44b",
+  "modes": [
+    "light"
+  ]
+}
