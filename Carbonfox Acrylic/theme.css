@@ -1530,6 +1530,19 @@ body .markdown-source-view.mod-cm6 .cm-em {
   border-color: transparent !important;
 }
 
+/* Side-by-side split pane gap (matching gap between sidebar and canvas) */
+.workspace-split.mod-root.mod-vertical,
+.workspace-split.mod-root .workspace-split.mod-vertical {
+  gap: 8px !important;
+}
+
+.workspace-split.mod-root.mod-vertical > * > .workspace-leaf-resize-handle,
+.workspace-split.mod-root .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+  inset-inline-end: -8px !important;
+  width: 14px !important;
+  z-index: 10 !important;
+}
+
 /* Floating Pill Tabs: transparent container across all splits & sidebars */
 .workspace-tab-header-container {
   background-color: transparent !important;
