@@ -4,20 +4,22 @@ A premium suite of **Acrylic / Frosted Glass** themes for [Obsidian](https://obs
 
 Built on the glass layout foundations of **[Blur Theme](https://github.com/Jawuj/Blur-Theme) by Jawuj**, redesigned and polished for true system translucency, distraction-free note-taking, and cross-platform consistency across **Windows 11** and **Linux (GNOME / KDE / Wayland)**.
 
-![Carbonfox Acrylic Preview](screenshots/carbonfox-win11.png)
+![Carbonfox Acrylic Preview](assets/carbonfox_win11.png)
+
+> 📸 **Visual Showcase:** Check out the full **[Theme Gallery (GALLERY.md)](GALLERY.md)** for side-by-side previews of all 6 themes across **Windows 11** (dynamic acrylic GIFs) and **Linux GNOME** (Blur my Shell screenshots).
 
 ---
 
 ## 🎨 Themes in This Pack
 
-| Theme | Description & Palette | Flavor |
-| :--- | :--- | :--- |
-| **Carbonfox Acrylic** | Carbon grays with vibrant cyan headers, blue subheadings, and pink accents | Dark |
-| **Duskfox Acrylic** | Deep atmospheric purple dusk with soft violet and amber accents | Dark |
-| **Nightfox Acrylic** | The signature deep navy blue with cool white and teal accents | Dark |
-| **Nordfox Acrylic** | Cool Arctic blues and frost tones inspired by the Nord color scheme | Dark |
-| **Terafox Acrylic** | Earthy ochres, warm browns, and amber tones | Dark |
-| **Dawnfox Acrylic** | Soft, low-contrast daylight palette with warm muted pastels | Light |
+| Theme | Description & Palette | Flavor | Showcase |
+| :--- | :--- | :--- | :---: |
+| **Carbonfox Acrylic** | Carbon grays with vibrant cyan headers, blue subheadings, and pink accents | Dark | [Preview](GALLERY.md#-carbonfox-acrylic) |
+| **Duskfox Acrylic** | Deep atmospheric purple dusk with soft violet and amber accents | Dark | [Preview](GALLERY.md#-duskfox-acrylic) |
+| **Nightfox Acrylic** | The signature deep navy blue with cool white and teal accents | Dark | [Preview](GALLERY.md#-nightfox-acrylic) |
+| **Nordfox Acrylic** | Cool Arctic blues and frost tones inspired by the Nord color scheme | Dark | [Preview](GALLERY.md#-nordfox-acrylic) |
+| **Terafox Acrylic** | Earthy ochres, warm browns, and amber tones | Dark | [Preview](GALLERY.md#-terafox-acrylic) |
+| **Dawnfox Acrylic** | Soft, low-contrast daylight palette with warm muted pastels | Light | [Preview](GALLERY.md#-dawnfox-acrylic) |
 
 ---
 
