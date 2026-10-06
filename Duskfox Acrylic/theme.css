@@ -1,0 +1,1583 @@
+/*
+  Theme: Duskfox Acrylic
+  Author: mihail
+  Description: Zed-inspired Duskfox acrylic glass theme for Obsidian (Purple Dusk Dark).
+  Version: 0.1.0
+*/
+
+/* ==============================================================================
+   THEME SETTINGS (Style Settings Plugin)
+   ============================================================================== */
+
+/* @settings
+
+name: Theme Settings
+
+id: theme-settings
+
+settings:
+
+  - id: custom-wallpaper
+
+    title: Custom Wallpaper URL
+
+    description: Enter a direct image link e.g. url(https://i.postimg.cc/XXXXXX/image.png)
+
+    type: variable-text
+
+    default: url(https://i.postimg.cc/sxXX7CP8/lunacidforest.png)
+
+  - id: toggle-glow
+
+    title: Enable Glow
+
+    description: Toggle glow effect on or off
+
+    type: class-toggle
+
+    default: true
+
+  - id: toggle-blur
+
+    title: Enable Blur
+
+    description: Toggle the blur effect (modals blur remains) 
+
+    type: class-toggle
+
+    default: true
+
+  - id: toggle-darken-notes
+
+    title: Enable Darkening
+
+    description: Toggle the dark overlay on the editor/notes background on or off
+
+    type: class-toggle
+
+    default: true
+
+  - id: glow-title
+
+    title: Glow General Notes
+
+    type: heading
+
+    level: 3
+
+  - id: custom-general-notes-theme
+
+    title: General Notes Themes
+
+    type: class-select
+
+    default: none
+
+    options:
+
+      - label: None
+
+        value: none
+
+      - label: White Glow G
+
+        value: white-glow-general
+
+      - label: Rainbow Glow G
+
+        value: rainbow-glow-general
+
+      - label: Soft Blue G
+
+        value: blue-glow-general
+
+      - label: Pink Neon G
+
+        value: pink-glow-general
+
+      - label: Purple G
+
+        value: purple-glow-general
+
+      - label: Yellow G
+
+        value: yellow-glow-general
+
+      - label: Green G
+
+        value: green-glow-general
+
+      - label: Aqua G
+
+        value: aqua-glow-general
+
+      - label: Red G
+
+        value: red-glow-general
+
+      - label: Orange G
+
+        value: orange-glow-general
+
+      - label: Brown G
+
+        value: brown-glow-general
+
+*/
+
+/* ==============================================================================
+   BACKGROUND IMAGE
+   ============================================================================== */
+
+body {
+
+  --custom-wallpaper: none;
+
+  background-color: #000;
+
+  background-image: var(--custom-wallpaper);
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+
+}
+
+/* ==============================================================================
+   MAIN EDITOR AREA (Frosted Glass Panels)
+   PERF: Reduced blur from 20px to 12px. Retains the frosted glass appearance
+   while significantly lowering sampling overhead (scales quadratically with radius).
+   ============================================================================== */
+
+.workspace-leaf-content,
+.markdown-preview-view,
+.cm-s-obsidian {
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+/* ==============================================================================
+   THEME VARIABLES
+   ============================================================================== */
+
+.theme-dark,
+
+.theme-light {
+
+  --background-primary: transparent;
+
+  --background-primary-alt: transparent;
+
+  --background-secondary: transparent;
+
+  --background-secondary-alt: transparent;
+
+  --background-modifier-cover: rgba(0, 0, 0, 0.45);
+
+  --background-modifier-border: rgba(255, 255, 255, 0.05);
+
+  --background-editor: transparent;
+
+  --background-code: #191726;
+
+  --code-background: #191726;
+
+  --text-normal: #ffffff;
+
+  --text-muted: #ffffff;
+
+  --text-faint: #ffffff;
+
+  --text-on-accent: #ffffff;
+
+  --text-accent: #ffffff;
+
+  --text-selection: #ffffff7a;
+
+  --text-highlight-bg: rgba(255, 255, 255, 0.15);
+
+  --divider-color: transparent;
+
+
+
+}
+
+/* ==============================================================================
+   SIDEBAR TRANSPARENCY
+   PERF: No dedicated blur -- already rendered on top of the blurred panel background.
+   ============================================================================== */
+
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  background: transparent;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+/* ==============================================================================
+   MODALS & MENUS (Blur & Transparency)
+   PERF: Reduced blur from 50px to 26px for smoother modal transitions.
+   ============================================================================== */
+
+.popover,
+.popover.menu-container,
+.mod-context-menu,
+.menu,
+.menu-list,
+.modal,
+.modal.mod-settings,
+.modal.mod-community-modal,
+.modal.suggester-modal,
+.modal.file-search-modal,
+.modal-search,
+.suggestion-container,
+.suggestion-popover {
+  background-color: rgba(35, 33, 54, 0.96) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  transform: translateZ(0);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75) !important;
+  color: #fff;
+}
+
+.modal.mod-community-modal .modal-sidebar,
+.modal.mod-community-modal .vertical-tab-content,
+.modal.mod-community-modal .setting-item {
+  background-color: transparent !important;
+  border: none;
+}
+
+.modal-bg {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.setting-item-control select.dropdown,
+
+select.dropdown {
+
+  color: #ffffff !important;
+
+}
+
+select.dropdown option {
+
+  color: #000000 !important;
+
+  background-color: #ffffff;
+
+}
+
+/* ==============================================================================
+   PROMPT STYLING (Quick Switcher, Command Palette, etc.)
+   ============================================================================== */
+
+body {
+
+  --prompt-input-height: 2.4em;
+
+  --prompt-width: 100%;
+
+  --prompt-max-width: 720px;
+
+  --prompt-max-height: 600px;
+
+}
+
+.modal.modal-search,
+
+.modal.suggester-modal,
+
+.modal.file-search-modal,
+.suggestion-container,
+.prompt {
+  background-color: rgba(35, 33, 54, 0.96) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  transform: translateZ(0);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75) !important;
+  max-width: var(--prompt-max-width);
+  max-height: var(--prompt-max-height);
+  color: #fff;
+}
+
+.prompt-results {
+  background-color: transparent !important;
+  border: none;
+}
+
+/* Prompt input field */
+
+input.suggestion-input,
+
+.modal input,
+
+input.prompt-input {
+
+  height: var(--prompt-input-height);
+
+  background: rgba(255, 255, 255, 0.07);
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 10px;
+
+}
+
+
+
+/* ==============================================================================
+   TEXT SELECTION
+   ============================================================================== */
+
+body ::selection {
+
+  background-color: rgba(180, 180, 180, 0.35);
+
+  color: #fff;
+
+}
+
+.cm-editor .cm-selectionBackground,
+
+.cm-editor.cm-focused .cm-selectionBackground {
+
+  background-color: rgba(180, 180, 180, 0.35) !important;
+
+}
+
+/* ==============================================================================
+   ANIMATIONS
+   ============================================================================== */
+
+.modal.mod-settings,
+
+.modal.mod-command-palette {
+
+  opacity: 0;
+
+  transform: scale(0.96) translateY(10px);
+
+  animation: settingsFadeIn 200ms ease-out forwards;
+
+}
+
+@keyframes settingsFadeIn {
+
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+
+  to { opacity: 1; transform: scale(1) translateY(0); }
+
+}
+
+/* PERF: Avoid animating text-shadow (repaints each frame on the main thread).
+   Static shadow combined with GPU filter: hue-rotate() animation. */
+
+@keyframes rainbowGlow {
+
+  0%   { filter: hue-rotate(0deg); }
+
+  100% { filter: hue-rotate(360deg); }
+
+}
+
+/* ==============================================================================
+   WIDE PAGE MODE
+   ============================================================================== */
+
+.wide-page {
+
+  --file-line-width: 100%;
+
+}
+
+.wide-page .markdown-preview-view,
+
+.wide-page .cm-s-obsidian {
+
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  padding: 10px;
+
+  margin: 0 auto;
+
+}
+
+/* ==============================================================================
+   UI CLEANUP
+   ============================================================================== */
+
+.workspace-tab-header { border: none; }
+
+.no-inline .inline-title { display: none; }
+
+/* ==============================================================================
+   CUSTOM INPUTS (Preview & Editor)
+   ============================================================================== */
+
+.markdown-preview-view input[type="text"],
+
+.markdown-preview-view input[type="number"],
+
+.markdown-preview-view textarea,
+
+.cm-editor input[type="text"],
+
+.cm-editor input[type="number"],
+
+.cm-editor textarea {
+
+  display: inline-block;
+
+  min-width: 170px;
+
+  max-width: 420px;
+
+  padding: 8px 12px;
+
+  margin: 6px 0;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: var(--text-normal);
+
+  transition: transform .12s ease, border-color .12s ease;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+}
+
+.markdown-preview-view input:focus,
+
+.markdown-preview-view textarea:focus,
+
+.cm-editor input:focus,
+
+.cm-editor textarea:focus {
+
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.045);
+
+}
+
+input::placeholder,
+
+textarea::placeholder {
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-style: italic;
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+
+input[type="number"]::-webkit-outer-spin-button {
+
+  -webkit-appearance: none;
+
+  margin: 0;
+
+}
+
+input[type="number"] {
+
+  -moz-appearance: textfield;
+
+  appearance: textfield;
+
+}
+
+/* ==============================================================================
+   EMBEDS (Transparent & Clean)
+   ============================================================================== */
+
+.markdown-embed,
+
+.markdown-embed-content {
+
+  background: transparent;
+
+  border: none;
+
+  box-shadow: none;
+
+}
+
+.markdown-embed::before,
+
+.markdown-embed-content::before {
+
+  display: none;
+
+}
+
+.markdown-embed-title {
+
+  background: transparent;
+
+  border: none;
+
+  padding: 0;
+
+  margin: 0;
+
+}
+
+/* ==============================================================================
+   TAGS (Preview & Editor)
+   ============================================================================== */
+
+.tag,
+
+.cm-tag {
+
+  background-color: rgba(77, 77, 77, 0.43);
+
+  color: var(--text-normal);
+
+  border: none;
+
+  border-radius: 3px;
+
+  padding: 0 3px;
+
+}
+
+/* ==============================================================================
+   HOVER EFFECTS
+   ============================================================================== */
+
+.search-result-file-title:hover,
+
+.search-result-file-match:hover,
+
+.search-result-hover:hover,
+
+.tree-item-self.is-clickable:hover {
+
+  background-color: rgba(255, 255, 255, 0.1);
+
+  color: var(--text-normal);
+
+}
+
+/* ==============================================================================
+   GENERAL NOTES GLOW PRESETS
+   ============================================================================== */
+
+body[class*="-glow-general"] .markdown-preview-view :is(strong, em, a, mark),
+
+body[class*="-glow-general"] .markdown-source-view.mod-cm6 :is(.cm-strong, .cm-em, .cm-highlight, .cm-link, .cm-hmd-internal-link),
+
+body[class*="-glow-general"] .markdown-preview-view :is(h1, h2, h3, h4, h5, h6),
+
+body[class*="-glow-general"] .markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6),
+
+body[class*="-glow-general"] .tabs-nav-item,
+
+body[class*="-glow-general"] .tabs-nav-item:hover,
+
+body[class*="-glow-general"] .markdown-preview-view.homepage .callout-title,
+
+body[class*="-glow-general"] .inline-title {
+
+  color: #ffffff !important;
+
+  text-shadow: var(--glow-shadow, none);
+
+}
+
+/* PERF: Rainbow effect uses filter animation on its own compositing layer
+   instead of repainting text-shadow per frame. */
+
+body.rainbow-glow-general :is(strong, em, a, mark, h1, h2, h3, h4, h5, h6,
+
+  .cm-strong, .cm-em, .cm-highlight, .cm-link, .cm-hmd-internal-link,
+
+  .tabs-nav-item, .inline-title) {
+
+  text-shadow: 0 0 2px #ff4da6, 0 0 6px #7f00ff, 0 0 10px #00bfff;
+
+  animation: rainbowGlow 6s linear infinite;
+
+  will-change: filter;
+
+}
+
+body.green-glow-general .nav-folder-title:hover {
+
+  color: #ffffff !important;
+
+  text-shadow: var(--glow-shadow);
+
+}
+
+body.white-glow-general  { --glow-shadow: 0 0 1px #ffffff, 0 0 4px #ffffff; }
+
+body.rainbow-glow-general{ --glow-shadow: 0 0 2px #ff4da6, 0 0 6px #7f00ff, 0 0 10px #00bfff; }
+
+body.blue-glow-general   { --glow-shadow: 0 0 2px #33ccff, 0 0 6px #66d9ff, 0 0 10px #66d9ff; }
+
+body.pink-glow-general   { --glow-shadow: 0 0 2px #ff66cc, 0 0 6px #ff99dd, 0 0 10px #ff99dd; }
+
+body.purple-glow-general { --glow-shadow: 0 0 2px #b266ff, 0 0 6px #cc99ff, 0 0 10px #cc99ff; }
+
+body.yellow-glow-general { --glow-shadow: 0 0 2px #ffe600, 0 0 6px #fff700, 0 0 10px #fff700; }
+
+body.green-glow-general  { --glow-shadow: 0 0 2px #0dff00, 0 0 6px #00ff15, 0 0 10px #00ff15; }
+
+body.aqua-glow-general   { --glow-shadow: 0 0 2px #00ffc3, 0 0 6px #33ffd6, 0 0 10px #66ffe6; }
+
+body.red-glow-general    { --glow-shadow: 0 0 2px #ff4d4d, 0 0 6px #ff6666, 0 0 10px #ff9999; }
+
+body.orange-glow-general { --glow-shadow: 0 0 2px #ffaa33, 0 0 6px #ff9933, 0 0 10px #ffcc66; }
+
+body.brown-glow-general  { --glow-shadow: 0 0 2px #8b4513, 0 0 6px #a0522d, 0 0 10px #cd853f; }
+
+/* ==============================================================================
+   CODE BLOCKS
+   ============================================================================== */
+
+/* Code blocks in Reading view */
+.markdown-preview-view pre,
+.markdown-rendered pre {
+  background-color: #191726 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+}
+
+.markdown-preview-view pre code,
+.markdown-rendered pre code {
+  background-color: transparent !important;
+}
+
+/* Code blocks in Live Preview / Editor */
+.markdown-source-view.mod-cm6 .cm-line span.cm-formatting.cm-formatting-code-block,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  background-color: #191726 !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Inline code snippets */
+.markdown-preview-view code:not(pre code),
+.markdown-rendered code:not(pre code),
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  background-color: #2d2a45 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  color: var(--df-cyan, #9ccfd8) !important;
+}
+
+/* ==============================================================================
+   EMBED CARDS
+   ============================================================================== */
+
+.embed {
+
+  position: relative;
+
+  border-radius: 1rem;
+
+  overflow: hidden;
+
+  background: #19172611;
+
+  border: 1px solid transparent;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  margin: 1.2em 0;
+
+  padding: 0;
+
+  max-width: 100%;
+
+}
+
+.embed:hover {
+
+  transform: translateY(-4px);
+
+}
+
+.embed img {
+
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  filter: brightness(0.95) contrast(1.05);
+
+  transition: filter 0.3s ease;
+
+}
+
+.embed:hover img {
+
+  filter: brightness(1) contrast(1.1);
+
+}
+
+body[class*="-glow-general"]:not(.rainbow-glow-general) .embed {
+
+  border-color: var(--embed-border, transparent);
+
+}
+
+body.white-glow-general  .embed { --embed-border: rgba(255, 255, 255, 0.4); --embed-shadow: rgba(255, 255, 255, 0.25); }
+
+body.blue-glow-general   .embed { --embed-border: rgba(113, 186, 255, 0.4); --embed-shadow: rgba(113, 186, 255, 0.25); }
+
+body.pink-glow-general   .embed { --embed-border: rgba(255, 140, 207, 0.4); --embed-shadow: rgba(255, 140, 207, 0.25); }
+
+body.purple-glow-general .embed { --embed-border: rgba(192, 132, 252, 0.4); --embed-shadow: rgba(192, 132, 252, 0.25); }
+
+body.yellow-glow-general .embed { --embed-border: rgba(250, 204, 21, 0.4);  --embed-shadow: rgba(250, 204, 21, 0.25); }
+
+body.green-glow-general  .embed { --embed-border: rgba(74, 222, 128, 0.4);  --embed-shadow: rgba(74, 222, 128, 0.25); }
+
+body.aqua-glow-general   .embed { --embed-border: rgba(0, 255, 255, 0.4);   --embed-shadow: rgba(0, 255, 255, 0.25); }
+
+body.red-glow-general    .embed { --embed-border: rgba(255, 90, 90, 0.4);   --embed-shadow: rgba(255, 90, 90, 0.25); }
+
+body.orange-glow-general .embed { --embed-border: rgba(255, 165, 0, 0.4);   --embed-shadow: rgba(255, 165, 0, 0.25); }
+
+body.brown-glow-general  .embed { --embed-border: rgba(139, 69, 19, 0.4);   --embed-shadow: rgba(139, 69, 19, 0.25); }
+
+/* PERF: Reduced box-shadow layers from 5 to 3 with smaller radii. */
+
+body.rainbow-glow-general .embed {
+
+  border: 1px solid transparent;
+
+  box-shadow: 0 0 14px rgba(255, 140, 207, 0.22),
+
+              0 0 22px rgba(74, 222, 128, 0.22),
+
+              0 0 30px rgba(113, 186, 255, 0.22);
+
+}
+
+/* ==============================================================================
+   GLOW DISABLED OVERRIDES
+   ============================================================================== */
+
+body:not(.toggle-glow) {
+
+  --glow-shadow: none;
+
+}
+
+body:not(.toggle-glow) :is(strong, em, a, mark, h1, h2, h3, h4, h5, h6,
+
+  .cm-strong, .cm-em, .cm-highlight, .cm-link, .cm-hmd-internal-link,
+
+  .tabs-nav-item, .inline-title) {
+
+  animation: none !important;
+
+  text-shadow: none !important;
+
+  filter: none !important;
+
+}
+
+body:not(.toggle-glow) .embed {
+
+  box-shadow: none !important;
+
+  border-color: transparent !important;
+
+}
+
+body:not(.toggle-glow) input[type="checkbox"]:checked,
+
+body:not(.toggle-glow) input.task-list-item-checkbox:checked {
+
+  box-shadow: none !important;
+
+}
+
+
+
+body:not(.toggle-blur) .workspace-leaf-content,
+
+body:not(.toggle-blur) .markdown-preview-view,
+
+body:not(.toggle-blur) .cm-s-obsidian,
+
+body:not(.toggle-blur) .wide-page .markdown-preview-view,
+
+body:not(.toggle-blur) .wide-page .cm-s-obsidian {
+
+  background-color: transparent;
+
+  backdrop-filter: none;
+
+  -webkit-backdrop-filter: none;
+
+}
+
+
+
+body:not(.toggle-darken-notes) .workspace-leaf-content,
+
+body:not(.toggle-darken-notes) .markdown-preview-view,
+
+body:not(.toggle-darken-notes) .cm-s-obsidian,
+
+body:not(.toggle-darken-notes) .wide-page .markdown-preview-view,
+
+body:not(.toggle-darken-notes) .wide-page .cm-s-obsidian {
+
+  background-color: transparent !important;
+
+}
+
+
+
+/* ==============================================================================
+   TABLES
+   PERF: No dedicated backdrop-filter (8px) -- inherits panel blur at 12px.
+   ============================================================================== */
+
+.markdown-preview-view table,
+
+.cm-preview table,
+
+.markdown-source-view.mod-cm6 table {
+
+  border-collapse: collapse;
+
+  width: 100%;
+
+  font-size: 0.95rem;
+
+  margin: 1.2em 0;
+
+  background: transparent !important;
+
+  border: 1px solid rgba(176, 176, 176, 0.35);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition: border-color 0.2s ease-in-out;
+
+}
+
+.markdown-preview-view th,
+
+.cm-preview th,
+
+.markdown-source-view.mod-cm6 th {
+
+  background: transparent !important;
+
+  color: #ffffff;
+
+  padding: 0.6em 0.8em;
+
+  text-align: center;
+
+  font-weight: 700;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  text-shadow:
+
+    0 0 1px rgba(0, 0, 0, 0.4),
+
+    0 0 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.markdown-preview-view td:nth-child(2),
+
+.cm-preview td:nth-child(2),
+
+.markdown-source-view.mod-cm6 td:nth-child(2) {
+
+  color: var(--text-accent);
+
+  font-weight: bold;
+
+  text-align: center;
+
+}
+
+.markdown-preview-view td,
+
+.cm-preview td,
+
+.markdown-source-view.mod-cm6 td {
+
+  padding: 0.55em 0.8em;
+
+  text-align: left;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  color: var(--highlight);
+
+  background: transparent !important;
+
+}
+
+.markdown-preview-view tr:nth-child(even),
+
+.cm-preview tr:nth-child(even),
+
+.markdown-source-view.mod-cm6 tr:nth-child(even) {
+
+  background-color: rgba(255, 255, 255, 0.015);
+
+}
+
+.markdown-preview-view td,
+
+.markdown-preview-view th,
+
+.cm-preview td,
+
+.cm-preview th,
+
+.markdown-source-view.mod-cm6 td,
+
+.markdown-source-view.mod-cm6 th {
+
+  border: 1px solid rgba(176, 176, 176, 0.2);
+
+}
+
+.markdown-preview-view tr:hover,
+
+.cm-preview tr:hover,
+
+.markdown-source-view.mod-cm6 tr:hover {
+
+  background-color: inherit !important;
+
+}
+
+/* ==============================================================================
+   CHECKBOXES & TASK ITEMS
+   ============================================================================== */
+
+.markdown-preview-view input[type="checkbox"],
+
+.cm-s-obsidian input[type="checkbox"],
+
+input.task-list-item-checkbox {
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  width: 16px;
+
+  height: 16px;
+
+  margin: 0 6px 0 0;
+
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 4px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  cursor: pointer;
+
+  position: relative;
+
+  vertical-align: middle;
+
+  transition: all .15s ease;
+
+}
+
+.markdown-preview-view input[type="checkbox"]:hover,
+
+.cm-s-obsidian input[type="checkbox"]:hover,
+
+input.task-list-item-checkbox:hover {
+
+  border-color: rgba(255, 255, 255, 0.85);
+
+  transform: translateY(-1px);
+
+}
+
+.markdown-preview-view input[type="checkbox"]:checked,
+.cm-s-obsidian input[type="checkbox"]:checked,
+input.task-list-item-checkbox:checked,
+.task-list-item-checkbox[checked="true"] {
+  background-color: var(--interactive-accent, #c4a7e7) !important;
+  border-color: var(--interactive-accent, #78a9ff) !important;
+  box-shadow: var(--glow-shadow, 0 0 6px var(--interactive-accent));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") !important;
+  background-size: 70% 70% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.markdown-preview-view input[type="checkbox"]:checked::after,
+.cm-s-obsidian input[type="checkbox"]:checked::after,
+input.task-list-item-checkbox:checked::after {
+  display: none !important;
+}
+
+
+
+/* ==============================================================================
+   DROPDOWN SELECTS (Style Settings class-select, etc.)
+   ============================================================================== */
+
+select,
+
+.modal select,
+
+.popover select,
+
+.setting-item-control select,
+
+.css-settings-manager select {
+
+  -webkit-appearance: none;
+
+  -moz-appearance: none;
+
+  appearance: none;
+
+  background-repeat: no-repeat;
+
+  background-position: right 0.6rem center;
+
+  background-color: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 10px;
+
+  color: #fff;
+
+  padding: 0.4em 2.4em 0.4em 0.8em;
+
+  cursor: pointer;
+
+  color-scheme: dark;
+
+  transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
+
+}
+
+select:hover,
+
+.setting-item-control select:hover {
+
+  transform: translateY(-1px);
+
+  border-color: rgba(255, 255, 255, 0.5) !important;
+
+  background-color: rgba(255, 255, 255, 0.08) !important;
+
+}
+
+select:focus,
+
+select:active,
+
+.setting-item-control select:focus {
+
+  outline: none;
+
+  transform: translateY(-1px);
+
+  background-color: rgba(255, 255, 255, 0.08) !important;
+
+}
+
+select option {
+
+  background-color: #16181c;
+
+  color: #fff;
+
+}
+
+select option:hover,
+
+select option:checked,
+
+select option:focus {
+
+  background-color: var(--interactive-accent) !important;
+
+  color: #fff !important;
+
+}
+
+/* ==============================================================================
+   STYLE SETTINGS TEXT INPUTS (e.g. wallpaper URL field)
+   ============================================================================== */
+
+.setting-item-control input[type="text"],
+
+.setting-item-control input[type="search"],
+
+.setting-item-control input[type="number"] {
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 10px;
+
+  color: #fff;
+
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+
+}
+
+.setting-item-control input[type="text"]:focus,
+
+.setting-item-control input[type="search"]:focus,
+
+.setting-item-control input[type="number"]:focus {
+
+  outline: none;
+
+  border-color: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.06);
+
+}
+
+/* ==============================================================================
+   GENERIC BUTTONS (Settings panel: 'Browse', 'Check for updates', etc.)
+   ============================================================================== */
+
+button:not(.clickable-icon),
+
+.setting-item-control button,
+
+.vertical-tab-content button,
+
+.modal button,
+
+.community-modal-installed-tab button {
+
+  background-color: rgba(255, 255, 255, 0.05) !important;
+
+  color: #fff !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+
+  border-radius: 10px !important;
+
+  padding: 6px 14px;
+
+  font-weight: 500;
+
+  transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
+
+  cursor: pointer;
+
+}
+
+button:not(.clickable-icon):hover,
+
+.setting-item-control button:hover,
+
+.vertical-tab-content button:hover,
+
+.modal button:hover,
+
+.community-modal-installed-tab button:hover {
+
+  border-color: rgba(255, 255, 255, 0.7) !important;
+
+  background-color: rgba(255, 255, 255, 0.1) !important;
+
+}
+
+button.mod-cta,
+
+.setting-item-control button.mod-cta {
+
+  background-color: var(--interactive-accent) !important;
+
+  border-color: var(--interactive-accent) !important;
+
+}
+
+button.mod-cta:hover,
+
+.setting-item-control button.mod-cta:hover {
+
+  filter: brightness(1.15);
+
+}
+
+.clickable-icon:hover {
+
+  background: rgba(255, 255, 255, 0.08) !important;
+
+  border-radius: 6px;
+
+}
+
+/* ==============================================================================
+   SEARCH BOXES (e.g. 'Search settings...')
+   ============================================================================== */
+
+.search-input-container input,
+
+input[type="search"],
+
+.prompt-input {
+
+  background: rgba(255, 255, 255, 0.05) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+
+  border-radius: 10px !important;
+
+  color: #fff !important;
+
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+
+}
+
+.search-input-container input:focus,
+
+input[type="search"]:focus {
+
+  outline: none;
+
+  transform: translateY(-1px);
+
+  border-color: rgba(255, 255, 255, 0.9) !important;
+
+}
+
+
+
+/* ==============================================================================
+   HOME TAB PLUGIN FIX
+   ============================================================================== */
+
+.home-tab-searchbar {
+
+  background-color: rgba(66, 66, 66, 0.212) !important;
+
+  transition: background-color .12s ease;
+
+}
+
+.home-tab-searchbar:focus-within {
+
+  background-color: rgba(66, 66, 66, 0.212) !important;
+
+}
+
+.home-tab-searchbar input[type="search"] {
+
+  background: transparent !important;
+
+  border: none !important;
+
+  box-shadow: none !important;
+
+  border-radius: 0 !important;
+
+  color: #fff !important;
+
+}
+
+.home-tab-searchbar input::placeholder {
+
+  color: rgba(235, 229, 229, 0.212);
+
+  font-style: italic;
+
+}
+
+[class*="home-tab"][class*="suggestion"] {
+
+  background-color: rgba(20, 20, 20, 0.5) !important;
+
+  border-top: none !important;
+
+}
+
+[class*="home-tab"][class*="suggestion"] *,
+
+[class*="home-tab"][class*="suggestion-item"] {
+
+  background-color: transparent !important;
+
+  color: #fff;
+
+}
+
+.suggestion-item.is-selected,
+
+[class*="suggestion-item"].is-selected,
+
+.suggestion-item:hover,
+
+[class*="suggestion-item"]:hover {
+
+  background-color: rgba(175, 175, 175, 0.082) !important;
+
+  color: #fff !important;
+
+  border-radius: 6px;
+
+}
+
+/* ==============================================================================
+   BUTTONS (Input)
+   ============================================================================== */
+
+body.theme-dark .mb-button.sepia-glow > button {
+
+  background: rgba(255, 255, 255, 0.04) !important;
+
+  color: #ffffff !important;
+
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
+
+  font-weight: 500;
+
+  font-size: 0.92rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 12px;
+
+  padding: 12px 22px;
+
+  margin: 0.5rem 0;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+
+              inset 0 1px 0 rgba(255, 255, 255, 0.02);
+
+  transition: transform .12s ease,
+
+              box-shadow .12s ease,
+
+              border-color .12s ease,
+
+              background .12s ease;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.03em;
+
+  cursor: pointer;
+
+}
+
+body.theme-dark .mb-button.sepia-glow > button:hover {
+
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 6px 20px rgba(50, 80, 200, 0.1),
+
+              0 0 0 3px rgba(80, 120, 255, 0.05);
+
+  background: rgba(255, 255, 255, 0.06);
+
+}/* ==============================================================================
+   DUSKFOX ACRYLIC PALETTE & GLASS OVERRIDES
+   ============================================================================== */
+
+.theme-dark, .theme-light {
+  --df-bg: #232136;
+  --df-fg: #e0def4;
+  --df-cyan: #9ccfd8;
+  --df-blue: #569fba;
+  --df-magenta: #c4a7e7;
+  --df-pink: #eb6f92;
+  --df-orange: #ea9a97;
+  --df-yellow: #f6c177;
+  --df-green: #a3be8c;
+  
+  --text-normal: var(--df-fg) !important;
+  
+  /* Crisp white UI elements for maximum legibility */
+  --text-muted: #ffffff !important;
+  --text-faint: #ffffff !important;
+  --icon-color: #ffffff !important;
+  --icon-color-hover: #ffffff !important;
+  --icon-color-active: #ffffff !important;
+  --nav-item-color: #ffffff !important;
+  --nav-item-color-hover: #ffffff !important;
+  --nav-item-color-active: #ffffff !important;
+  
+  --interactive-accent: var(--df-magenta) !important;
+  --text-selection: rgba(196, 167, 231, 0.25) !important;
+  
+  /* Central editor note background opacity */
+  --background-primary: rgba(35, 33, 54, 0.8) !important;
+  --background-primary-alt: rgba(35, 33, 54, 0.8) !important;
+}
+
+/* Italics highlighted in Pink accent */
+body .markdown-preview-view em,
+body .markdown-source-view.mod-cm6 .cm-em {
+  color: var(--df-pink) !important;
+}
+
+/* Heading hierarchy (Cyan H1, Blue H2, Magenta H3-H6) */
+.markdown-preview-view h1,
+.markdown-source-view.mod-cm6 .cm-header-1,
+.inline-title {
+  color: var(--df-cyan) !important;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view.mod-cm6 .cm-header-2 {
+  color: var(--df-blue) !important;
+}
+
+.markdown-preview-view h3,
+.markdown-source-view.mod-cm6 .cm-header-3,
+.markdown-preview-view h4,
+.markdown-source-view.mod-cm6 .cm-header-4,
+.markdown-preview-view h5,
+.markdown-source-view.mod-cm6 .cm-header-5,
+.markdown-preview-view h6,
+.markdown-source-view.mod-cm6 .cm-header-6 {
+  color: var(--df-magenta) !important;
+}
+/* ==============================================================================
+   ACRYLIC GLASS LAYOUT & OPACITY ARCHITECTURE
+   ============================================================================== */
+
+
+
+/* Sidebars and Ribbons (Edges) -> 50% opacity */
+.workspace-ribbon,
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  background-color: rgba(35, 33, 54, 0.5) !important;
+}
+
+/* Central Note Area -> 75% opacity */
+.workspace-leaf-content {
+  background-color: rgba(35, 33, 54, 0.75) !important;
+}
+
+/* Force inner text wrappers transparent to prevent background stacking */
+.view-content,
+.view-header,
+.markdown-preview-view,
+.markdown-source-view,
+.cm-s-obsidian,
+.cm-scroller,
+.cm-sizer,
+.cm-content,
+.markdown-preview-sizer {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Remove residual padding when sidebars are collapsed */
+.workspace-split.mod-left-split.is-collapsed,
+.workspace-split.mod-right-split.is-collapsed {
+  padding: 0 !important;
+}
+
+/* Transparent split dividers and resize handles */
+.workspace-leaf-resize-handle {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Floating Pill Tabs: transparent container across all splits & sidebars */
+.workspace-tab-header-container {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.workspace-tab-header,
+.workspace-tab-header.is-active {
+  border-radius: 8px !important;
+  margin: 2px 2px !important;
+}
+
+/* Inactive tabs: dimmed text so active tab clearly stands out on all platforms */
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-title,
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-icon {
+  color: rgba(255, 255, 255, 0.50) !important;
+}
+
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-title,
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-icon {
+  color: #ffffff !important;
+}
+
+/* Active tab: clean slim pill from commit 1b60abd */
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+  display: none !important;
+}
+
+.workspace-tab-header.is-active {
+  background-color: rgba(35, 33, 54, 0.75) !important;
+  border-radius: 8px !important;
+  border-bottom: none !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: #ffffff !important;
+}
+
+.workspace-tab-header .workspace-tab-header-inner,
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+  border-radius: 8px !important;
+  background-color: transparent !important;
+}
+
