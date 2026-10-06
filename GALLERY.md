@@ -22,9 +22,11 @@ Visual showcases and cross-platform comparisons for all 6 themes across **Window
 
 > **Carbon grays** with vibrant cyan headers, cool blue subheadings, and pink accents.
 
-| Windows 11 (Focus Blur Dynamics) | Linux GNOME (Blur my Shell) |
-| :---: | :---: |
-| ![Carbonfox Windows 11](assets/win11/carbonfox_win11.gif) | ![Carbonfox GNOME](assets/gnome/carbonfox_gnome.png) |
+### Windows 11 (Focus Blur Dynamics)
+<img src="assets/win11/carbonfox_win11.gif" width="900" alt="Carbonfox Windows 11" />
+
+### Linux GNOME (Blur my Shell)
+<img src="assets/gnome/carbonfox_gnome.png" width="900" alt="Carbonfox GNOME" />
 
 [↑ Back to top](#-nightfox-acrylic-theme-gallery)
 
@@ -34,9 +36,11 @@ Visual showcases and cross-platform comparisons for all 6 themes across **Window
 
 > **Deep atmospheric purple dusk** with soft violet titles and warm amber accents.
 
-| Windows 11 (Focus Blur Dynamics) | Linux GNOME (Blur my Shell) |
-| :---: | :---: |
-| ![Duskfox Windows 11](assets/win11/duskfox_win11.gif) | ![Duskfox GNOME](assets/gnome/duskfox_gnome.png) |
+### Windows 11 (Focus Blur Dynamics)
+<img src="assets/win11/duskfox_win11.gif" width="900" alt="Duskfox Windows 11" />
+
+### Linux GNOME (Blur my Shell)
+<img src="assets/gnome/duskfox_gnome.png" width="900" alt="Duskfox GNOME" />
 
 [↑ Back to top](#-nightfox-acrylic-theme-gallery)
 
@@ -46,9 +50,11 @@ Visual showcases and cross-platform comparisons for all 6 themes across **Window
 
 > **Signature deep navy blue** with crisp cool whites and teal accents.
 
-| Windows 11 (Focus Blur Dynamics) | Linux GNOME (Blur my Shell) |
-| :---: | :---: |
-| ![Nightfox Windows 11](assets/win11/nightfox_win11.gif) | ![Nightfox GNOME](assets/gnome/nightfox_gnome.png) |
+### Windows 11 (Focus Blur Dynamics)
+<img src="assets/win11/nightfox_win11.gif" width="900" alt="Nightfox Windows 11" />
+
+### Linux GNOME (Blur my Shell)
+<img src="assets/gnome/nightfox_gnome.png" width="900" alt="Nightfox GNOME" />
 
 [↑ Back to top](#-nightfox-acrylic-theme-gallery)
 
@@ -58,9 +64,11 @@ Visual showcases and cross-platform comparisons for all 6 themes across **Window
 
 > **Cool Arctic blues** and frost tones inspired by the classic Nord palette.
 
-| Windows 11 (Focus Blur Dynamics) | Linux GNOME (Blur my Shell) |
-| :---: | :---: |
-| ![Nordfox Windows 11](assets/win11/nordfox_win11.gif) | ![Nordfox GNOME](assets/gnome/nordfox_gnome.png) |
+### Windows 11 (Focus Blur Dynamics)
+<img src="assets/win11/nordfox_win11.gif" width="900" alt="Nordfox Windows 11" />
+
+### Linux GNOME (Blur my Shell)
+<img src="assets/gnome/nordfox_gnome.png" width="900" alt="Nordfox GNOME" />
 
 [↑ Back to top](#-nightfox-acrylic-theme-gallery)
 
@@ -70,9 +78,11 @@ Visual showcases and cross-platform comparisons for all 6 themes across **Window
 
 > **Earthy ochres**, warm browns, and amber tones for a grounded, comfortable reading experience.
 
-| Windows 11 (Focus Blur Dynamics) | Linux GNOME (Blur my Shell) |
-| :---: | :---: |
-| ![Terafox Windows 11](assets/win11/terafox_win11.gif) | ![Terafox GNOME](assets/gnome/terafox_gnome.png) |
+### Windows 11 (Focus Blur Dynamics)
+<img src="assets/win11/terafox_win11.gif" width="900" alt="Terafox Windows 11" />
+
+### Linux GNOME (Blur my Shell)
+<img src="assets/gnome/terafox_gnome.png" width="900" alt="Terafox GNOME" />
 
 [↑ Back to top](#-nightfox-acrylic-theme-gallery)
 
@@ -82,8 +92,10 @@ Visual showcases and cross-platform comparisons for all 6 themes across **Window
 
 > **Soft daylight palette** with warm muted pastels and enhanced contrast for crisp light-mode readability.
 
-| Windows 11 (Focus Blur Dynamics) | Linux GNOME (Blur my Shell) |
-| :---: | :---: |
-| ![Dawnfox Windows 11](assets/win11/dawnfox_win11.gif) | ![Dawnfox GNOME](assets/gnome/dawnfox_gnome.png) |
+### Windows 11 (Focus Blur Dynamics)
+<img src="assets/win11/dawnfox_win11.gif" width="900" alt="Dawnfox Windows 11" />
+
+### Linux GNOME (Blur my Shell)
+<img src="assets/gnome/dawnfox_gnome.png" width="900" alt="Dawnfox GNOME" />
 
 [↑ Back to top](#-nightfox-acrylic-theme-gallery)
