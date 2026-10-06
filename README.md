@@ -17,9 +17,7 @@ Built on the glass layout foundations of **[Blur Theme](https://github.com/Jawuj
 - 🪟 **True Frosted Glass Effect** — System-level backdrop translucency across Windows 11 (DirectComposition/DWM) and Linux (Blur my Shell).
 - 🎨 **6 Curated Palettes** — 5 immersive dark flavors + 1 tuned daylight theme with vibrant syntax highlights.
 - 🖼️ **Custom Wallpaper Support** — Use any custom background image via the Style Settings plugin or a single CSS variable.
-- 📑 **Clean Island Geometry** — Floating glass panels with dedicated 8px vertical split gaps for multi-tab workflows.
 - 🖋️ **Opaque Code & Reader Blocks** — Syntax-highlighted code blocks and callouts remain crisp and readable without background visual noise.
-- 🎛️ **Style Settings Ready** — Easily toggle blur, subtle glow, darkening overlays, and wallpaper directly from Obsidian's UI.
 
 ---
 
@@ -144,7 +142,7 @@ On GNOME (Wayland or X11), native window blur is provided by GNOME Shell extensi
 
 ## 📜 Credits & License
 
-- Created and maintained by **[mihail](https://github.com/mihail44b)**.
+- Created and maintained by **[mihail44b](https://github.com/mihail44b)**.
 - Palette colors derived from [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) and [Zed Editor](https://zed.dev).
 - Glass layout foundation adapted from [Jawuj/Blur-Theme](https://github.com/Jawuj/Blur-Theme).
 - Released under the [MIT License](LICENSE).
