@@ -144,7 +144,7 @@ On GNOME (Wayland or X11), native window blur is provided by GNOME Shell extensi
 
 ## 📜 Credits & License
 
-- Created and maintained by **[mihail](https://github.com/mihail44b)**.
+- Created and maintained by **[mihail44b](https://github.com/mihail44b)**.
 - Palette colors derived from [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) and [Zed Editor](https://zed.dev).
 - Glass layout foundation adapted from [Jawuj/Blur-Theme](https://github.com/Jawuj/Blur-Theme).
 - Released under the [MIT License](LICENSE).
