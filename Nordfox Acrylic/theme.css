@@ -699,6 +699,17 @@ body.brown-glow-general  { --glow-shadow: 0 0 2px #8b4513, 0 0 6px #a0522d, 0 0 
   color: var(--nord-cyan, #88c0d0) !important;
 }
 
+/* Code comments (Live Preview & Reading view) */
+.cm-s-obsidian span.cm-comment,
+.markdown-source-view.mod-cm6 .cm-line .cm-comment,
+.markdown-source-view.mod-cm6 .cm-comment,
+.markdown-preview-view pre code .token.comment,
+.markdown-rendered pre code .token.comment,
+.token.comment {
+  color: var(--code-comment) !important;
+  font-style: normal !important;
+}
+
 /* ==============================================================================
    EMBED CARDS
    ============================================================================== */
@@ -1441,8 +1452,10 @@ body.theme-dark .mb-button.sepia-glow > button:hover {
   --nord-orange: #d89079;
   --nord-yellow: #ebcb8b;
   --nord-green: #a3be8c;
+  --nord-comment: #60728a;
   
   --text-normal: var(--nord-fg) !important;
+  --code-comment: var(--nord-comment) !important;
   
   /* Crisp white UI elements for maximum legibility */
   --text-muted: #ffffff !important;
