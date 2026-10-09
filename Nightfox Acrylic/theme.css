@@ -699,12 +699,97 @@ body.brown-glow-general  { --glow-shadow: 0 0 2px #8b4513, 0 0 6px #a0522d, 0 0 
   color: var(--nf-cyan, #63cdcf) !important;
 }
 
-/* Code comments (Live Preview & Reading view) */
+/* ==============================================================================
+   SYNTAX HIGHLIGHTING (Reading View & Live Preview)
+   1-to-1 Zed / Nightfox Palette Mapping
+   ============================================================================== */
+
+/* Keywords (struct, virtual, class, public, return, if, else, void) */
+.cm-s-obsidian span.cm-keyword,
+.markdown-rendered pre code .token.keyword,
+.markdown-preview-view pre code .token.keyword,
+.token.keyword {
+  color: var(--code-keyword) !important;
+}
+
+/* Functions & Methods (eat, fly, cout, printf) */
+.cm-s-obsidian span.cm-def,
+.cm-s-obsidian span.cm-variable-2,
+.markdown-rendered pre code .token.function,
+.markdown-preview-view pre code .token.function,
+.token.function {
+  color: var(--code-function) !important;
+}
+
+/* Types, Classes & Structs (Bird, FlyingBird, string, int) */
+.cm-s-obsidian span.cm-type,
+.markdown-rendered pre code .token.class-name,
+.markdown-rendered pre code .token.type,
+.markdown-preview-view pre code .token.class-name,
+.markdown-preview-view pre code .token.type,
+.token.class-name,
+.token.type {
+  color: var(--code-type) !important;
+}
+
+/* Strings ("Hello world", 'c') */
+.cm-s-obsidian span.cm-string,
+.cm-s-obsidian span.cm-string-2,
+.markdown-rendered pre code .token.string,
+.markdown-preview-view pre code .token.string,
+.token.string {
+  color: var(--code-string) !important;
+}
+
+/* Properties, Variables & Parameters (member vars, identifiers) */
+.cm-s-obsidian span.cm-property,
+.cm-s-obsidian span.cm-variable,
+.markdown-rendered pre code .token.property,
+.markdown-rendered pre code .token.variable,
+.markdown-rendered pre code .token.parameter,
+.markdown-preview-view pre code .token.property,
+.markdown-preview-view pre code .token.variable,
+.markdown-preview-view pre code .token.parameter,
+.token.property,
+.token.variable,
+.token.parameter {
+  color: var(--code-property) !important;
+}
+
+/* Numbers, Booleans & Constants (123, 3.14, true, false, null) */
+.cm-s-obsidian span.cm-number,
+.cm-s-obsidian span.cm-atom,
+.markdown-rendered pre code .token.number,
+.markdown-rendered pre code .token.boolean,
+.markdown-preview-view pre code .token.number,
+.markdown-preview-view pre code .token.boolean,
+.token.number,
+.token.boolean {
+  color: var(--code-value) !important;
+}
+
+/* Operators (<<, ::, +, -, =, ==, ->, .) */
+.cm-s-obsidian span.cm-operator,
+.markdown-rendered pre code .token.operator,
+.markdown-preview-view pre code .token.operator,
+.token.operator {
+  color: var(--code-operator) !important;
+}
+
+/* Punctuation (;, {}, (), [], ,) */
+.cm-s-obsidian span.cm-punctuation,
+.markdown-rendered pre code .token.punctuation,
+.markdown-preview-view pre code .token.punctuation,
+.token.punctuation {
+  color: var(--code-punctuation) !important;
+}
+
+/* Comments (// ..., /* ... */) */
 .cm-s-obsidian span.cm-comment,
 .markdown-source-view.mod-cm6 .cm-line .cm-comment,
 .markdown-source-view.mod-cm6 .cm-comment,
-.markdown-preview-view pre code .token.comment,
 .markdown-rendered pre code .token.comment,
+.markdown-preview-view pre code .token.comment,
 .token.comment {
   color: var(--code-comment) !important;
   font-style: normal !important;
@@ -1455,6 +1540,14 @@ body.theme-dark .mb-button.sepia-glow > button:hover {
   --nf-comment: #738091;
   
   --text-normal: var(--nf-fg) !important;
+  --code-keyword: #9d79d6 !important;
+  --code-function: #86abdc !important;
+  --code-type: #dbc074 !important;
+  --code-string: #81b29a !important;
+  --code-property: #719cd6 !important;
+  --code-value: #f4a261 !important;
+  --code-operator: #aeafb0 !important;
+  --code-punctuation: #aeafb0 !important;
   --code-comment: var(--nf-comment) !important;
   
   /* Crisp white UI elements for maximum legibility */
